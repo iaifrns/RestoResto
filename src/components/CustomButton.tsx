@@ -33,4 +33,10 @@ const LinkCustomButton = ({ text }: { text: string }) => {
   );
 };
 
-export { IconCustomButton, LinkCustomButton };
+const MenuButton = ({text} : {text: string}) => {
+  return (
+    <div className="w-full p-2 bg-white flex items-center justify-center font-semibold">{text}</div>
+  )
+}
+
+export { IconCustomButton, LinkCustomButton, MenuButton };

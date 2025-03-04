@@ -52,8 +52,8 @@ const LandingPage = () => {
               </div>
             </div>
           </div>
-          <div className="w-full flex max-w-[1500px] h-full gap-11">
-            <div className="flex flex-col justify-between item-start h-full">
+          <div className="w-full flex md:min-w-[1200px] max-md:max-w-[100px] h-full gap-11 items-start justify-center">
+            <div className="hidden 2xl:flex flex-col justify-between item-start h-full">
               <TopBox />
               <div className="flex flex-col w-fit">
                 <IconCustomButton icon="line-md:facebook" />
@@ -63,10 +63,10 @@ const LandingPage = () => {
               </div>
               <BottomBox />
             </div>
-            <div className="flex flex-col justify-between w-full">
+            <div className="flex flex-col justify-between w-full max-w-[1200px] h-full ">
               <TopBar />
               <div className="w-full flex justify-between items-center">
-                <div className="w-2/4 flex flex-col gap-8">
+                <div className="w-[70%] flex flex-col gap-8">
                   <div className="flex gap-2 text-2xl font-bold text-white">
                     <span>.</span>
                     <span>.</span>
