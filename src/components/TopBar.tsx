@@ -48,7 +48,11 @@ const MenuBoxItem = ({
   );
 };
 
-const TopBar = () => {
+const TopBar = ({
+  setShowReservationFrom,
+}: {
+  setShowReservationFrom: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const [isHovered, setIsHovered] = useState(false);
   const [annousement, setAnnousement] = useState(false);
   const [showCart, setShowCart] = useState(false);
@@ -110,6 +114,7 @@ const TopBar = () => {
           className="flex justify-center items-center cursor-pointer p-4 h-full relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+          onClick={() => setShowReservationFrom(true)}
         >
           <div
             className={`absolute w-full bg-secondary ${

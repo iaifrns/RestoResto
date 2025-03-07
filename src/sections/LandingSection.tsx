@@ -5,7 +5,11 @@ import TopBar from "../components/TopBar";
 import { images } from "../constants/images";
 import { Icon } from "@iconify/react";
 
-const LandingPage = () => {
+const LandingPage = ({
+  setShowReservationFrom,
+}: {
+  setShowReservationFrom: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const [image, setImage] = useState(images.LANDING1);
 
   useEffect(() => {
@@ -64,7 +68,7 @@ const LandingPage = () => {
               <BottomBox />
             </div>
             <div className="flex flex-col justify-between w-full max-w-[1200px] h-full ">
-              <TopBar />
+              <TopBar setShowReservationFrom={setShowReservationFrom} />
               <div className="w-full flex justify-between items-center">
                 <div className="w-[70%] flex flex-col gap-8">
                   <div className="flex gap-2 text-2xl font-bold text-white">
