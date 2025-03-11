@@ -23,7 +23,7 @@ const MenuBoxItem = ({
     <div
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
-      className="text-white hover:text-secondary font-bold text-sm flex items-center cursor-pointer relative "
+      className="text-white hover:text-secondary font-semibold text-xs flex items-center cursor-pointer relative w-[70px] justify-center"
     >
       <p>{text}</p>
       {icon && (
@@ -56,19 +56,25 @@ const TopBar = ({
   const [isHovered, setIsHovered] = useState(false);
   const [annousement, setAnnousement] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [isCartHovered, setIsCartHovered] = useState(false);
+  const [isShareIconHovered, setIsShareIconHovered] = useState(false);
   return (
     <div className="flex items-center w-full max-md:max-w-[1250px] h-[70px] bg-primary justify-between pl-4 border-gray-700 border-[1px] relative">
       <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
       <div className="flex items-center h-full">
         <div className="flex gap-4 border-r border-[#eee] h-full">
-          <MenuBoxItem text="Home" />
+          <MenuBoxItem text="HOME" />
           <MenuBoxItem text="MENU" icon dropData={dropDownMenuData.menu} />
           <MenuBoxItem text="ABOUT" />
           <MenuBoxItem text="CONTACT" />
           <MenuBoxItem text="NEWS" />
           <MenuBoxItem text="PAGES" icon dropData={dropDownMenuData.pages} />
         </div>
-        <div className="flex items-center justify-center border-r border-[#eee] h-full p-4 cursor-pointer w-[80px]">
+        <div
+          className="flex items-center justify-center border-r border-[#eee] h-full p-4 cursor-pointer w-[80px] relative"
+          onMouseEnter={() => setIsCartHovered(true)}
+          onMouseLeave={() => setIsCartHovered(false)}
+        >
           {showCart ? (
             <Icon
               icon={"iconoir:cancel"}
@@ -92,8 +98,19 @@ const TopBar = ({
               />
             </div>
           )}
+          <div
+            className={`w-[150px] bg-primary ${
+              isCartHovered ? "absolute" : "hidden"
+            } top-full right-0 border border-gray-700`}
+          >
+            <p className="text-center p-4 text-white font-semibold font-mono">
+              Your Cart
+            </p>
+          </div>
         </div>
-        <div className="flex items-center justify-center border-r border-[#eee] h-full p-4 cursor-pointer">
+        <div className="flex items-center justify-center border-r border-[#eee] h-full p-4 cursor-pointer relative"
+        onMouseEnter={() => setIsShareIconHovered(true)}
+        onMouseLeave={() => setIsShareIconHovered(false)}>
           {annousement ? (
             <Icon
               icon={"iconoir:cancel"}
@@ -109,6 +126,15 @@ const TopBar = ({
               onClick={() => setAnnousement(true)}
             />
           )}
+          <div
+            className={`w-[150px] bg-primary ${
+              isShareIconHovered ? "absolute" : "hidden"
+            } top-full right-0 border border-gray-700`}
+          >
+            <p className="text-center p-4 text-white font-semibold font-mono">
+              Share
+            </p>
+          </div>
         </div>
         <div
           className="flex justify-center items-center cursor-pointer p-4 h-full relative"
