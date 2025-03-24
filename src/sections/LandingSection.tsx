@@ -4,27 +4,28 @@ import { BottomBox, TopBox } from "../components/DecorationBox";
 import TopBar from "../components/TopBar";
 import { images } from "../constants/images";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 
 const LandingPage = ({
   setShowReservationFrom,
 }: {
   setShowReservationFrom: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const [image, setImage] = useState(images.LANDING1);
+  const [ind, setInd] = useState(0);
+  const imgs = [
+    images.LANDING1,
+    images.LANDING2,
+    images.LANDING3,
+    images.LANDING4,
+  ];
 
   useEffect(() => {
-    const imags = [
-      images.LANDING1,
-      images.LANDING2,
-      images.LANDING3,
-      images.LANDING4,
-    ];
     let index = 0;
     const interval = setInterval(() => {
-      if (index === imags.length) {
+      if (index === imgs.length) {
         index = 0;
       }
-      setImage(imags[index]);
+      setInd(index);
       index++;
     }, 5000);
     return () => clearInterval(interval);
@@ -32,14 +33,14 @@ const LandingPage = ({
 
   return (
     <div className="w-full h-screen relative">
-      <div className="w-full h-full absolute">
+      <div className="absolute w-full h-full z-10">
         <div className="w-full h-full bg-[rgba(0,0,0,0.7)] flex flex-col justify-center items-center p-8 gap-2">
           <div className="flex w-full max-w-[1200px] justify-between text-sm">
             <div className="font-semibold">
               <span className="text-secondary">En</span>
               <span className="text-white"> / Fr</span>
             </div>
-            <div className="flex gap-4 font-semibold">
+            <div className="flex gap-4 font-semibold font-playfair">
               <div className="flex gap-2 cursor-pointer">
                 <span className="text-secondary hover:text-white">
                   Call now:
@@ -71,17 +72,14 @@ const LandingPage = ({
               <TopBar setShowReservationFrom={setShowReservationFrom} />
               <div className="w-full flex justify-between items-center">
                 <div className="w-[70%] flex flex-col gap-8">
-                  <div className="flex gap-2 text-2xl font-bold text-white">
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
+                  <div>
+                    <span className="font-playfair text-white font-bold text-xl tracking-[0.4em]">.....</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-2xl font-serif text-white">
+                    <i className=" text-xl text-white font-playfair">
                       Top Services and Premium Cuisine
-                    </p>
-                    <p className="font-bold text-[58px] text-white">
+                    </i>
+                    <p className="font-bold text-[56px] text-white font-poppins">
                       Welcome to RestoResto Restaurant
                     </p>
                   </div>
@@ -91,29 +89,43 @@ const LandingPage = ({
                   <div className="flex justify-center items-center h-[70px] w-[70px] rounded-full bg-[rgba(193,157,96,0.4)]">
                     <div className="flex justify-center items-center w-[55px] h-[55px] bg-secondary rounded-full">
                       <Icon
-                        icon={"ic:round-play-arrow"}
-                        width={"32"}
-                        className="text-white"
+                          icon={"ic:round-play-arrow"}
+                          width={"32"}
+                          className="text-white"
                       />
                     </div>
                   </div>
-                  <p className="text-white font-semibold font-mono text-lg">
+                  <i className="text-white font-playfair text-lg">
                     View Promo Video
-                  </p>
+                  </i>
                 </div>
               </div>
               <div className="flex justify-end w-full max-w-[1250px]">
                 <Icon
-                  icon={"icon-park-outline:double-down"}
-                  width={"32"}
-                  className="text-white hover:text-secondary cursor-pointer"
+                    icon={"icon-park-outline:double-down"}
+                    width={"32"}
+                    className="text-white hover:text-secondary cursor-pointer"
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <img src={image} className="w-full h-full object-cover" />
+      <div className={'h-full w-full'}>
+        <div className={'relative h-screen overflow-hidden flex justify-center items-center'}>
+          {imgs.map((item, i) => (
+              <motion.img
+                  key={i}
+                  className={'w-full h-full object-cover absolute'}
+                  alt={item}
+                  src={item}
+                  initial={{opacity: 0, x: 50}}
+                  animate={{opacity: i===ind ? 1 : 0, x: i === ind ? 0 : 0}}
+                  transition={{duration:1, ease: "easeInOut"}}
+              />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

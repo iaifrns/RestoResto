@@ -23,9 +23,9 @@ const MenuBoxItem = ({
     <div
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
-      className="text-white hover:text-secondary font-semibold text-xs flex items-center cursor-pointer relative w-[70px] justify-center"
+      className="text-white hover:text-secondary font-semibold text-xs flex items-center cursor-pointer relative justify-center"
     >
-      <p>{text}</p>
+      <p className={'font-poppins'}>{text}</p>
       {icon && (
         <Icon
           icon={
@@ -38,7 +38,7 @@ const MenuBoxItem = ({
       <div className={`top-full ${isHovered && icon ? "absolute" : "hidden"}`}>
         <div className="w-[180px] bg-primary flex flex-col gap-2">
           {dropData?.map((item) => (
-            <p className="text-white font-semibold w-full p-2 hover:bg-gray-700">
+            <p className="text-white font-semibold font-poppins w-full p-2 hover:bg-gray-700">
               {item}
             </p>
           ))}
@@ -60,9 +60,9 @@ const TopBar = ({
   const [isShareIconHovered, setIsShareIconHovered] = useState(false);
   return (
     <div className="flex items-center w-full max-md:max-w-[1250px] h-[70px] bg-primary justify-between pl-4 border-gray-700 border-[1px] relative">
-      <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
+      <p className="text-2xl font-bold text-white font-shoulders">RESTORESTO</p>
       <div className="flex items-center h-full">
-        <div className="flex gap-4 border-r border-[#eee] h-full">
+        <div className="flex gap-4 border-r border-[#eee] h-full px-4">
           <MenuBoxItem text="HOME" />
           <MenuBoxItem text="MENU" icon dropData={dropDownMenuData.menu} />
           <MenuBoxItem text="ABOUT" />
@@ -103,7 +103,7 @@ const TopBar = ({
               isCartHovered ? "absolute" : "hidden"
             } top-full right-0 border border-gray-700`}
           >
-            <p className="text-center p-4 text-white font-semibold font-mono">
+            <p className="text-center p-4 text-white font-poppins">
               Your Cart
             </p>
           </div>
@@ -131,7 +131,7 @@ const TopBar = ({
               isShareIconHovered ? "absolute" : "hidden"
             } top-full right-0 border border-gray-700`}
           >
-            <p className="text-center p-4 text-white font-semibold font-mono">
+            <p className="text-center p-4 text-white font-poppins">
               Share
             </p>
           </div>
