@@ -35,7 +35,7 @@ const MenuBoxItem = ({
         />
       )}
 
-      <div className={`top-full ${isHovered && icon ? "absolute" : "hidden"}`}>
+      <div className={`absolute top-full transition-all duration-300 ease-out ${isHovered && icon ? "opacity-100 translate-y-1" : "opacity-0 translate-y-10"}`}>
         <div className="w-[180px] bg-primary flex flex-col gap-2">
           {dropData?.map((item) => (
             <p className="text-white font-semibold font-poppins w-full p-2 hover:bg-gray-700">
@@ -47,6 +47,8 @@ const MenuBoxItem = ({
     </div>
   );
 };
+
+const media = ["Facebook","Pinterest","Tumblr","Twitter","Linkedin"]
 
 const TopBar = ({
   setShowReservationFrom,
@@ -99,8 +101,8 @@ const TopBar = ({
             </div>
           )}
           <div
-            className={`w-[150px] bg-primary ${
-              isCartHovered ? "absolute" : "hidden"
+            className={`absolute w-[150px] bg-primary transition duration-300 ease-in-out ${
+              isCartHovered ? "opacity-100" : "opacity-0"
             } top-full right-0 border border-gray-700`}
           >
             <p className="text-center p-4 text-white font-poppins">
@@ -127,8 +129,8 @@ const TopBar = ({
             />
           )}
           <div
-            className={`w-[150px] bg-primary ${
-              isShareIconHovered ? "absolute" : "hidden"
+            className={`absolute w-[150px] bg-primary transition duration-300 ease-in-out ${
+              isShareIconHovered ? "opacity-100" : "opacity-0"
             } top-full right-0 border border-gray-700`}
           >
             <p className="text-center p-4 text-white font-poppins">
@@ -153,22 +155,20 @@ const TopBar = ({
         </div>
       </div>
       <div
-        className={`top-full ${
-          annousement ? "absolute" : "hidden"
+        className={`absolute top-full transition-all duration-300 ease-in ${
+          annousement ? "opacity-100" : "opacity-0"
         } left-0 w-full`}
       >
         <div className="w-full h-[100px] bg-[#252323] border border-gray-700 flex justify-center items-center gap-8">
-          <p className="font-bold text-white">Facebook</p>
-          <p className="font-bold text-white">Pinterest</p>
-          <p className="font-bold text-white">Tumblr</p>
-          <p className="font-bold text-white">Twitter</p>
-          <p className="font-bold text-white">Linkedin</p>
+          {media.map((item, ind) => (
+              <p className="font-bold text-white text-sm font-playfair cursor-pointer" key={ind}>{item}</p>
+          ))}
         </div>
       </div>
 
       <div
-        className={`top-full ${
-          showCart ? "absolute" : "hidden"
+        className={`absolute top-full transition-all duration-300 ease-out ${
+          showCart ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
         } w-full flex justify-end left-0`}
       >
         <div className="w-[400px] h-[400px] bg-[#252323] border border-gray-700 flex p-2 flex-col justify-between">

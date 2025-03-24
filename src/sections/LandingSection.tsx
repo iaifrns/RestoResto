@@ -104,7 +104,7 @@ const LandingPage = ({
                 <Icon
                     icon={"icon-park-outline:double-down"}
                     width={"32"}
-                    className="text-white hover:text-secondary cursor-pointer"
+                    className="text-white hover:text-secondary cursor-pointer animate-bounce"
                 />
               </div>
             </div>
