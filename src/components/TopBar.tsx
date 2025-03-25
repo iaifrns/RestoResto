@@ -165,7 +165,6 @@ const TopBar = ({
           ))}
         </div>
       </div>
-
       <div
         className={`absolute top-full transition-all duration-300 ease-out ${
           showCart ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
@@ -176,7 +175,7 @@ const TopBar = ({
             <p className="text-white font-bold text-xl">Your Cart</p>
             <p className="text-gray-400 font-semibold">4 items</p>
           </div>
-          <div className="w-full h-full overflow-y-auto border-b border-gray-700 p-2 gap-4 flex flex-col">
+          <div className="w-full h-full overflow-y-auto border-b border-gray-700 p-2 gap-4 flex flex-col transition-opacity delay-[2s]">
             {cartData.map((item, index) => (
               <CartItem data={item} ind={index} />
             ))}
