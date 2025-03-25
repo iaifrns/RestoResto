@@ -102,7 +102,7 @@ const TopBar = ({
           )}
           <div
             className={`absolute w-[150px] bg-primary transition duration-300 ease-in-out ${
-              isCartHovered ? "opacity-100" : "opacity-0"
+              isCartHovered ? "opacity-100" : "hidden pointer-events-none"
             } top-full right-0 border border-gray-700`}
           >
             <p className="text-center p-4 text-white font-poppins">
@@ -156,12 +156,12 @@ const TopBar = ({
       </div>
       <div
         className={`absolute top-full transition-all duration-300 ease-in ${
-          annousement ? "opacity-100" : "opacity-0"
+          annousement ? "block pointer-events-auto" : "hidden pointer-events-none"
         } left-0 w-full`}
       >
         <div className="w-full h-[100px] bg-[#252323] border border-gray-700 flex justify-center items-center gap-8">
           {media.map((item, ind) => (
-              <p className="font-bold text-white text-sm font-playfair cursor-pointer" key={ind}>{item}</p>
+              <p className="font-bold text-white text-sm font-playfair cursor-pointer hover:text-secondary hover:underline" key={ind}>{item}</p>
           ))}
         </div>
       </div>

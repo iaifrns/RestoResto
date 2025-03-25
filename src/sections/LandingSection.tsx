@@ -34,7 +34,7 @@ const LandingPage = ({
   return (
     <div className="w-full h-screen relative">
       <div className="absolute w-full h-full z-10">
-        <div className="w-full h-full bg-[rgba(0,0,0,0.7)] flex flex-col justify-center items-center p-8 gap-2">
+        <div className="w-full h-full bg-[rgba(0,0,0,0.7)] flex flex-col justify-center items-center p-8 gap-2 ">
           <div className="flex w-full max-w-[1200px] justify-between text-sm">
             <div className="font-semibold">
               <span className="text-secondary">En</span>
@@ -57,7 +57,7 @@ const LandingPage = ({
               </div>
             </div>
           </div>
-          <div className="w-full flex md:min-w-[1200px] max-md:max-w-[100px] h-full gap-11 items-start justify-center">
+          <div className="w-full flex max-md:max-w-[100px] h-full gap-11 items-start justify-center">
             <div className="hidden 2xl:flex flex-col justify-between item-start h-full">
               <TopBox />
               <div className="flex flex-col w-fit">
