@@ -35,29 +35,32 @@ const LandingPage = ({
     <div className="w-full h-screen relative">
       <div className="absolute w-full h-full z-10">
         <div className="w-full h-full bg-[rgba(0,0,0,0.7)] flex flex-col justify-center items-center p-8 gap-2 ">
-          <div className="flex w-full max-w-[1200px] justify-between text-sm">
-            <div className="font-semibold">
-              <span className="text-secondary">En</span>
-              <span className="text-white"> / Fr</span>
-            </div>
-            <div className="flex gap-4 font-semibold font-playfair">
-              <div className="flex gap-2 cursor-pointer">
+          <div className={'w-full flex justify-end items-center max-w-[1370px]'}>
+            <div className="flex w-full max-w-[1200px] justify-between text-sm">
+              <div className="font-semibold">
+                <span className="text-secondary">En</span>
+                <span className="text-white"> / Fr</span>
+              </div>
+              <div className="flex gap-4 font-semibold font-playfair">
+                <div className="flex gap-2 cursor-pointer">
                 <span className="text-secondary hover:text-white">
                   Call now:
                 </span>
-                <span className="text-white hover:text-secondary">
+                  <span className="text-white hover:text-secondary">
                   +237655778899
                 </span>
-              </div>
-              <div className="flex gap-2 cursor-pointer">
-                <span className="text-secondary hover:text-white">Write:</span>
-                <span className="text-white hover:text-secondary">
+                </div>
+                <div className="flex gap-2 cursor-pointer">
+                  <span className="text-secondary hover:text-white">Write:</span>
+                  <span className="text-white hover:text-secondary">
                   yourmail@gmail.com
                 </span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="w-full flex max-md:max-w-[100px] h-full gap-11 items-start justify-center">
+
+          <div className="w-full flex max-md:max-w-[100px] h-full gap-16 items-start justify-center">
             <div className="hidden 2xl:flex flex-col justify-between item-start h-full">
               <TopBox />
               <div className="flex flex-col w-fit">
