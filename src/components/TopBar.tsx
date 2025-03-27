@@ -35,7 +35,7 @@ const MenuBoxItem = ({
         />
       )}
 
-      <div className={`absolute top-full transition-all duration-300 ease-out ${isHovered && icon ? "opacity-100 translate-y-1" : "opacity-0 translate-y-10"}`}>
+      <div className={`absolute top-full transition-all duration-300 ease-out ${isHovered && icon ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         <div className="w-[180px] bg-primary flex flex-col gap-2">
           {dropData?.map((item) => (
             <p className="text-white font-semibold font-poppins w-full p-2 hover:bg-gray-700">
