@@ -35,7 +35,13 @@ const MenuBoxItem = ({
         />
       )}
 
-      <div className={`absolute top-full transition-all duration-300 ease-out ${isHovered && icon ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none translate-y-5"}`}>
+      <div
+        className={`absolute top-full transition-all duration-300 ease-out ${
+          isHovered && icon
+            ? "opacity-100 pointer-events-auto translate-y-0"
+            : "opacity-0 pointer-events-none translate-y-5"
+        }`}
+      >
         <div className="w-[180px] bg-primary flex flex-col gap-2">
           {dropData?.map((item) => (
             <p className="text-white font-semibold font-poppins w-full p-2 hover:bg-gray-700">
@@ -48,7 +54,13 @@ const MenuBoxItem = ({
   );
 };
 
-const medias = ["Facebook","Pinterest","Tumblr","Twitter","Linkedin"]
+const medias = [
+  { text: "Facebook", delay: "first-delay" },
+  { text: "Pinterest", delay: "second-delay" },
+  { text: "Tumblr", delay: "third-delay" },
+  { text: "Twitter", delay: "fouth-delay" },
+  { text: "Linkedin", delay: "fieth-delay" },
+];
 
 const TopBar = ({
   setShowReservationFrom,
@@ -61,7 +73,7 @@ const TopBar = ({
   const [isCartHovered, setIsCartHovered] = useState(false);
   const [isShareIconHovered, setIsShareIconHovered] = useState(false);
   return (
-    <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 border-[1px] relative">
+    <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 max-w-[1200px] border-[1px] relative">
       <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
       <div className="flex items-center h-full">
         <div className="flex gap-4 border-r border-[#eee] h-full">
@@ -110,9 +122,11 @@ const TopBar = ({
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center border-r border-[#eee] h-full p-4 cursor-pointer relative"
-        onMouseEnter={() => setIsShareIconHovered(true)}
-        onMouseLeave={() => setIsShareIconHovered(false)}>
+        <div
+          className="flex items-center justify-center border-r border-[#eee] h-full p-4 cursor-pointer relative"
+          onMouseEnter={() => setIsShareIconHovered(true)}
+          onMouseLeave={() => setIsShareIconHovered(false)}
+        >
           {annousement ? (
             <Icon
               icon={"iconoir:cancel"}
@@ -156,19 +170,32 @@ const TopBar = ({
       </div>
       <div
         className={`absolute top-full transition-all duration-500 ease-in-out ${
-          annousement ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          annousement
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         } left-0 w-full`}
       >
         <div className="w-full h-[100px] bg-[#252323] border border-gray-700 flex justify-center items-center gap-8">
           {medias.map((item, ind) => (
-          <p className="font-bold text-white cursor-pointer hover:text-secondary hover:underline" key={ind}>{item}</p>
+            <p
+              className={`font-bold text-white cursor-pointer transition-all duration-300 ease-out hover:text-secondary hover:underline ${
+                annousement
+                  ? "opacity-100 translate-y-0 " + `${item.delay}`
+                  : "opacity-0 translate-y-3"
+              }`}
+              key={ind}
+            >
+              {item.text}
+            </p>
           ))}
         </div>
       </div>
 
       <div
         className={`absolute transition-all duration-300 ease-out top-full ${
-          showCart ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-10 pointer-events-none"
+          showCart
+            ? "opacity-100 translate-x-0 pointer-events-auto"
+            : "opacity-0 translate-x-10 pointer-events-none"
         } w-full flex justify-end left-0`}
       >
         <div className="w-[400px] h-[400px] bg-[#252323] border border-gray-700 flex p-2 flex-col justify-between">

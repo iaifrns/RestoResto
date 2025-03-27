@@ -20,12 +20,22 @@ const PopUpReservation = ({
 
   return (
     <div
-      className={`w-full h-full ${
-        show ? "absolute" : "hidden"
-      } bg-[rgba(41,41,41,0.7)] z-20`}
+      className={`absolute transition-color duration-[1s] ease-out-in w-full h-full ${
+        show
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+      } bg-[rgba(41,41,41,0.8)] z-20`}
+      onClick={() => setShow(false)}
     >
       <div className="flex justify-center items-center w-full h-full">
-        <div className="w-[700px] h-[650px] bg-[#252525] flex justify-center items-center relative">
+        <div
+          className={`w-[700px] h-[650px] bg-[#252525] flex justify-center items-center relative transition-all duration-500 ease-out ${
+            show
+              ? "opacity-100 delay-[1s] translate-y-0"
+              : "opacity-0 translate-y-10"
+          }`}
+          onClick={(e)=>e.stopPropagation()}
+        >
           <div className="w-[90%] h-[90%] border relative">
             <div className="absolute w-full h-full">
               <div className="flex flex-col w-full h-full gap-6 items-center p-4">
