@@ -35,7 +35,7 @@ const LinkCustomButton = ({ text }: { text: string }) => {
 
 const MenuButton = ({text} : {text: string}) => {
   return (
-    <div className="w-full p-2 bg-white flex items-center justify-center font-semibold">{text}</div>
+    <div className="w-full p-2 bg-white flex items-center justify-center font-semibold cursor-pointer">{text}</div>
   )
 }
 

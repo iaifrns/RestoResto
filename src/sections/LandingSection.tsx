@@ -35,7 +35,7 @@ const LandingPage = ({
     <div className="w-full h-screen relative">
       <div className="absolute w-full h-full z-10">
         <div className="w-full h-full bg-[rgba(0,0,0,0.7)] flex flex-col justify-center items-center p-8 gap-2 ">
-          <div className={'w-full flex justify-end items-center max-w-[1370px]'}>
+          <div className={'w-full flex justify-center 2xl:justify-end items-center max-w-[1370px]'}>
             <div className="flex w-full max-w-[1200px] justify-between text-sm">
               <div className="font-semibold">
                 <span className="text-secondary">En</span>
@@ -71,7 +71,7 @@ const LandingPage = ({
               </div>
               <BottomBox />
             </div>
-            <div className="flex flex-col justify-between w-full max-w-[1200px] h-full ">
+            <div className="flex flex-col justify-between w-full max-w-[1200px] 2xl:max-w-[1300px] h-full ">
               <TopBar setShowReservationFrom={setShowReservationFrom} />
               <div className="w-full flex justify-between items-center">
                 <div className="w-[70%] flex flex-col gap-8">

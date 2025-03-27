@@ -23,9 +23,9 @@ const MenuBoxItem = ({
     <div
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
-      className="text-white hover:text-secondary font-semibold text-xs flex items-center cursor-pointer relative justify-center"
+      className="text-white hover:text-secondary font-poppins font-semibold text-xs flex items-center cursor-pointer relative w-[70px] justify-center"
     >
-      <p className={'font-poppins'}>{text}</p>
+      <p>{text}</p>
       {icon && (
         <Icon
           icon={
@@ -35,7 +35,7 @@ const MenuBoxItem = ({
         />
       )}
 
-      <div className={`absolute top-full transition-all duration-300 ease-out ${isHovered && icon ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+      <div className={`absolute top-full transition-all duration-300 ease-out ${isHovered && icon ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none translate-y-5"}`}>
         <div className="w-[180px] bg-primary flex flex-col gap-2">
           {dropData?.map((item) => (
             <p className="text-white font-semibold font-poppins w-full p-2 hover:bg-gray-700">
@@ -48,7 +48,7 @@ const MenuBoxItem = ({
   );
 };
 
-const media = ["Facebook","Pinterest","Tumblr","Twitter","Linkedin"]
+const medias = ["Facebook","Pinterest","Tumblr","Twitter","Linkedin"]
 
 const TopBar = ({
   setShowReservationFrom,
@@ -61,10 +61,10 @@ const TopBar = ({
   const [isCartHovered, setIsCartHovered] = useState(false);
   const [isShareIconHovered, setIsShareIconHovered] = useState(false);
   return (
-    <div className="flex items-center w-full max-md:max-w-[1250px] h-[70px] bg-primary justify-between pl-4 border-gray-700 border-[1px] relative">
-      <p className="text-2xl font-bold text-white font-shoulders">RESTORESTO</p>
+    <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 border-[1px] relative">
+      <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
       <div className="flex items-center h-full">
-        <div className="flex gap-4 border-r border-[#eee] h-full px-4">
+        <div className="flex gap-4 border-r border-[#eee] h-full">
           <MenuBoxItem text="HOME" />
           <MenuBoxItem text="MENU" icon dropData={dropDownMenuData.menu} />
           <MenuBoxItem text="ABOUT" />
@@ -101,11 +101,11 @@ const TopBar = ({
             </div>
           )}
           <div
-            className={`absolute w-[150px] bg-primary transition duration-300 ease-in-out ${
-              isCartHovered ? "opacity-100" : "hidden pointer-events-none"
+            className={`absolute w-[150px] transition-all duration-300 ease-in-out pointer-events-none bg-primary ${
+              isCartHovered ? "opacity-100" : "opacity-0"
             } top-full right-0 border border-gray-700`}
           >
-            <p className="text-center p-4 text-white font-poppins">
+            <p className="text-center p-4 text-white font-semibold font-mono">
               Your Cart
             </p>
           </div>
@@ -129,11 +129,11 @@ const TopBar = ({
             />
           )}
           <div
-            className={`absolute w-[150px] bg-primary transition duration-300 ease-in-out ${
+            className={`absolute w-[150px] transition-all duration-300 ease-in-out pointer-events-none bg-primary ${
               isShareIconHovered ? "opacity-100" : "opacity-0"
             } top-full right-0 border border-gray-700`}
           >
-            <p className="text-center p-4 text-white font-poppins">
+            <p className="text-center p-4 text-white font-semibold font-mono">
               Share
             </p>
           </div>
@@ -155,19 +155,20 @@ const TopBar = ({
         </div>
       </div>
       <div
-        className={`absolute top-full transition-all duration-300 ease-in ${
-          annousement ? "block pointer-events-auto" : "hidden pointer-events-none"
+        className={`absolute top-full transition-all duration-500 ease-in-out ${
+          annousement ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } left-0 w-full`}
       >
         <div className="w-full h-[100px] bg-[#252323] border border-gray-700 flex justify-center items-center gap-8">
-          {media.map((item, ind) => (
-              <p className="font-bold text-white text-sm font-playfair cursor-pointer hover:text-secondary hover:underline" key={ind}>{item}</p>
+          {medias.map((item, ind) => (
+          <p className="font-bold text-white cursor-pointer hover:text-secondary hover:underline" key={ind}>{item}</p>
           ))}
         </div>
       </div>
+
       <div
-        className={`absolute top-full transition-all duration-300 ease-out ${
-          showCart ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+        className={`absolute transition-all duration-300 ease-out top-full ${
+          showCart ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-10 pointer-events-none"
         } w-full flex justify-end left-0`}
       >
         <div className="w-[400px] h-[400px] bg-[#252323] border border-gray-700 flex p-2 flex-col justify-between">
@@ -175,7 +176,7 @@ const TopBar = ({
             <p className="text-white font-bold text-xl">Your Cart</p>
             <p className="text-gray-400 font-semibold">4 items</p>
           </div>
-          <div className="w-full h-full overflow-y-auto border-b border-gray-700 p-2 gap-4 flex flex-col transition-opacity delay-[2s]">
+          <div className="w-full h-full overflow-y-auto border-b border-gray-700 p-2 gap-4 flex flex-col">
             {cartData.map((item, index) => (
               <CartItem data={item} ind={index} />
             ))}
