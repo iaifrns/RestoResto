@@ -34,7 +34,7 @@ const PopUpReservation = ({
               ? "opacity-100 delay-[1s] translate-y-0"
               : "opacity-0 translate-y-10"
           }`}
-          onClick={(e)=>e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()}
         >
           <div className="w-[90%] h-[90%] border relative">
             <div className="absolute w-full h-full">

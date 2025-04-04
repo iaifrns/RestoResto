@@ -55,4 +55,28 @@ const MenuButton = ({ text }: { text: string }) => {
   );
 };
 
-export { IconCustomButton, LinkCustomButton, MenuButton };
+const CustomButton = ({ text }: { text: string }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  return (
+    <div
+      className="py-4 px-8 border-2 border-secondary flex gap-8 bg-secondary w-fit items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-white hover:border-white"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <p
+        className={`${
+          isHovered ? "text-gray-500" : "text-white"
+        } font-semibold text-sm`}
+      >
+        {text}
+      </p>
+      <Icon
+        icon={"tabler:arrow-right"}
+        className={isHovered ? "text-gray-500" : "text-white"}
+        width={"18"}
+      />
+    </div>
+  );
+};
+
+export { IconCustomButton, LinkCustomButton, MenuButton, CustomButton };
