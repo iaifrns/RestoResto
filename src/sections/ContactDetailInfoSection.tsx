@@ -1,8 +1,7 @@
-import React from "react";
-import ComponentContainer from "../layout/SectionContainer";
-import { images } from "../constants/images";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Dottes } from "../components/DecorationBox";
+import { images } from "../constants/images";
+import ComponentContainer from "../layout/SectionContainer";
 
 const ContactDetailInfoSection = () => {
   return (
