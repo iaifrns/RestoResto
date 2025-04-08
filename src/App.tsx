@@ -3,6 +3,7 @@ import PopUpReservation from "./components/PopupReservation";
 import LandingPage from "./sections/LandingSection";
 import MainLoader from "./components/MainLoader";
 import OurStorySection from "./sections/OurStorySection.tsx";
+import ContactDetailInfoSection from "./sections/ContactDetailInfoSection.tsx";
 
 function App() {
   const [showReservationFrom, setShowReservationFrom] = useState(false);
@@ -25,6 +26,8 @@ function App() {
         <LandingPage setShowReservationFrom={setShowReservationFrom} />
         {/* about us section */}
         <OurStorySection />
+        {/* restaurant contact details */}
+        <ContactDetailInfoSection />
         {/* popup menu resevation */}
         <PopUpReservation show={showReservationFrom} setShow={setShowReservationFrom} />
       </div>
