@@ -7,7 +7,12 @@ const ContactDetailInfoSection = () => {
   return (
     <div className="w-full h-[70vh] bg-primary">
       <ComponentContainer extraStyle="h-full flex justify-between">
-        <div className="w-full h-full relative">
+        <div
+          className="w-full h-full relative bg-fixed bg-center bg-no-repeat bg-cover "
+          style={{
+            backgroundImage: `url(${images.IMG2})`,
+          }}
+        >
           <div className="absolute w-full h-full bg-[rgba(0,0,0,0.6)] z-10">
             <div className="flex h-full w-full flex-col justify-center items-center gap-8">
               <Icon
@@ -28,11 +33,11 @@ const ContactDetailInfoSection = () => {
               </div>
             </div>
           </div>
-          <img
+          {/* <img
             src={images.IMG3}
             alt={images.IMG3}
             className="w-full h-full object-cover sticky top-0"
-          />
+          /> */}
         </div>
         <div className="w-full relative h-full">
           <div className="absolute w-full h-full flex justify-center items-center">
@@ -70,11 +75,18 @@ const ContactDetailInfoSection = () => {
               </div>
               <div className="w-[300px] flex justify-between items-center">
                 <div className="w-[100px] border border-secondary"></div>
-                <Icon icon="tabler:point" width="24" height="24" className="text-secondary" />
+                <Icon
+                  icon="tabler:point"
+                  width="24"
+                  height="24"
+                  className="text-secondary"
+                />
                 <div className="w-[100px] border border-secondary"></div>
               </div>
               <div className="border border-secondary p-2">
-                <p className="text-white font-bold font-playfair text-2xl 2xl:text-[32px]">+1(110)123456789</p>
+                <p className="text-white font-bold font-playfair text-2xl 2xl:text-[32px] transition-all duration-300 ease-in-out hover:text-secondary cursor-pointer">
+                  +1(110)123456789
+                </p>
               </div>
             </div>
           </div>
