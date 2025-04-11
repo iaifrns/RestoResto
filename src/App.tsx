@@ -4,6 +4,8 @@ import LandingPage from "./sections/LandingSection";
 import MainLoader from "./components/MainLoader";
 import OurStorySection from "./sections/OurStorySection.tsx";
 import ContactDetailInfoSection from "./sections/ContactDetailInfoSection.tsx";
+import { ParallaxProvider } from "react-scroll-parallax";
+import ReasonsToChooseUs from "./sections/ReasonsToChooseUs.tsx";
 
 function App() {
   const [showReservationFrom, setShowReservationFrom] = useState(false);
@@ -20,18 +22,20 @@ function App() {
   }
 
   return (
-    <>
-      <div className="h-full w-full flex flex-col justify-center items-center relative">
+    <ParallaxProvider>
+      <div className="h-full w-full flex flex-col justify-center items-center relative bg-primary gap-16">
         {/* landing page section */}
         <LandingPage setShowReservationFrom={setShowReservationFrom} />
         {/* about us section */}
         <OurStorySection />
         {/* restaurant contact details */}
         <ContactDetailInfoSection />
+        {/* reasons for choosing us */}
+        <ReasonsToChooseUs />
         {/* popup menu resevation */}
         <PopUpReservation show={showReservationFrom} setShow={setShowReservationFrom} />
       </div>
-    </>
+    </ParallaxProvider>
   );
 }
 

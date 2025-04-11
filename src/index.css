@@ -10,6 +10,7 @@
   --font-playfair: "Playfair Display", sans-serif;
   --font-poppins: "Poppins", sans-serif;
   --first-delay: 0.5s;
+  --rotate-x-180: "rotateX(180deg)";
 }
 
 .first-delay {
@@ -30,4 +31,11 @@
 
 .fieth-delay {
   transition-delay: 2500ms;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
 }

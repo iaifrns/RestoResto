@@ -1,4 +1,5 @@
 import { ItemStructureType } from "../types/inputType";
+import { WhyUsType } from "../types/whyUsType";
 import { images } from "./images";
 
 const dropDownMenuData: Record<string, Array<string>> = {
@@ -72,62 +73,98 @@ const people: ItemStructureType[] = [
 ];
 
 const time: ItemStructureType[] = [
-    {
-        value: "",
-        text: "Any",
-      },
-      {
-        value: "10 Am",
-        text: "10 Am",
-      },
-      {
-        value: "11 Am",
-        text: "11 Am",
-      },
-      {
-        value: "12 Am",
-        text: "12 Am",
-      },
-      {
-        value: "1 Pm",
-        text: "1 Pm",
-      },
-      {
-        value: "2 Pm",
-        text: "2 Pm",
-      },
-      {
-        value: "3 Pm",
-        text: "3 Pm",
-      },
-      {
-        value: "4 Pm",
-        text: "4 Pm",
-      },
-      {
-        value: "5 Pm",
-        text: "5 Pm",
-      },
-      {
-        value: "6 Pm",
-        text: "6 Pm",
-      },
-      {
-        value: "7 Pm",
-        text: "7 Pm",
-      },
-      {
-        value: "8 Pm",
-        text: "8 Pm",
-      },
-      {
-        value: "9 Pm",
-        text: "9 Pm",
-      },
-      {
-        value: "10 Pm",
-        text: "10 Pm",
-      },
-]
+  {
+    value: "",
+    text: "Any",
+  },
+  {
+    value: "10 Am",
+    text: "10 Am",
+  },
+  {
+    value: "11 Am",
+    text: "11 Am",
+  },
+  {
+    value: "12 Am",
+    text: "12 Am",
+  },
+  {
+    value: "1 Pm",
+    text: "1 Pm",
+  },
+  {
+    value: "2 Pm",
+    text: "2 Pm",
+  },
+  {
+    value: "3 Pm",
+    text: "3 Pm",
+  },
+  {
+    value: "4 Pm",
+    text: "4 Pm",
+  },
+  {
+    value: "5 Pm",
+    text: "5 Pm",
+  },
+  {
+    value: "6 Pm",
+    text: "6 Pm",
+  },
+  {
+    value: "7 Pm",
+    text: "7 Pm",
+  },
+  {
+    value: "8 Pm",
+    text: "8 Pm",
+  },
+  {
+    value: "9 Pm",
+    text: "9 Pm",
+  },
+  {
+    value: "10 Pm",
+    text: "10 Pm",
+  },
+];
 
-export { dropDownMenuData, cartData, people, time };
+const whyUsData: WhyUsType[] = [
+  {
+    default: {
+      title: "Daily New Fresh Menus",
+      desc: "START EATING BETTER",
+      image: images.WhyUsImg1,
+    },
+    hover: {
+      icon: "ph:fish-light",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+    },
+  },
+  {
+    default: {
+      title: "Fresh Ingredient, Tasty Meals",
+      desc: "QUALITY IS THE HEART",
+      image: images.WhyUsImg2,
+    },
+    hover: {
+      icon: "emojione-monotone:carrot",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+    },
+  },
+  {
+    default: {
+      title: "Creative & Talented Chefs",
+      desc: "HOT & READY TO SERVE",
+      image: images.WhyUsImg3,
+    },
+    hover: {
+      icon: "game-icons:knife-fork",
+      text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+    },
+  },
+];
+
+export { dropDownMenuData, cartData, people, time, whyUsData };

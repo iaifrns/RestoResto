@@ -59,7 +59,7 @@ const CustomButton = ({ text }: { text: string }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className="py-4 px-8 border-2 border-secondary flex gap-8 bg-secondary w-fit items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-white hover:border-white"
+      className="px-8 flex gap-8 bg-secondary w-fit items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-white hover:border-white"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

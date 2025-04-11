@@ -2,18 +2,14 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { Dottes } from "../components/DecorationBox";
 import { images } from "../constants/images";
 import ComponentContainer from "../layout/SectionContainer";
+import { Parallax } from "react-scroll-parallax";
 
 const ContactDetailInfoSection = () => {
   return (
     <div className="w-full h-[70vh] bg-primary">
       <ComponentContainer extraStyle="h-full flex justify-between">
-        <div
-          className="w-full h-full relative bg-fixed bg-center bg-no-repeat bg-cover "
-          style={{
-            backgroundImage: `url(${images.IMG2})`,
-          }}
-        >
-          <div className="absolute w-full h-full bg-[rgba(0,0,0,0.6)] z-10">
+        <div className="w-full h-full relative bg-fixed bg-center bg-no-repeat bg-cover overflow-hidden">
+          <div className="absolute z-10 w-full h-full bg-[rgba(0,0,0,0.6)]">
             <div className="flex h-full w-full flex-col justify-center items-center gap-8">
               <Icon
                 icon="mdi:format-quote-close-outline"
@@ -33,11 +29,9 @@ const ContactDetailInfoSection = () => {
               </div>
             </div>
           </div>
-          {/* <img
-            src={images.IMG3}
-            alt={images.IMG3}
-            className="w-full h-full object-cover sticky top-0"
-          /> */}
+          <Parallax speed={-30}>
+            <img src={images.IMG3} className="w-full " />
+          </Parallax>
         </div>
         <div className="w-full relative h-full">
           <div className="absolute w-full h-full flex justify-center items-center">
