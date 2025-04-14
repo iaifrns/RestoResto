@@ -1,4 +1,5 @@
 import { ItemStructureType } from "../types/inputType";
+import { Dishe, MenuType } from "../types/menuType";
 import { WhyUsType } from "../types/whyUsType";
 import { images } from "./images";
 
@@ -167,4 +168,78 @@ const whyUsData: WhyUsType[] = [
   },
 ];
 
-export { dropDownMenuData, cartData, people, time, whyUsData };
+const mainDisheData: Dishe[] = [
+  {
+    title: "Soft shell crab",
+    desc: "Granny help you treat yourself with a different meal everyday",
+    price: "$29"
+  },
+  {
+    title: "Miso chicken",
+    desc: "Etiam tempus felis eros, id lobortis turpis",
+    price: "$16"
+  },
+  {
+    title: "Fish pie",
+    desc: "usce tempus tempus maximus volutpat",
+    price: "$09"
+  },
+  {
+    title: "Salmon riverland",
+    desc: "Fusce a tellus tellus. Praesent neque arcu, efficitur sit amet",
+    price: "$45"
+  },
+]
+
+const StarterData: Dishe[] = [
+  {
+    title: "Fried Potatoe",
+    desc: "Granny help you treat yourself with a different meal everyday",
+    price: "$55"
+  },
+  {
+    title: "Doner Burger",
+    desc: "Etiam tempus felis eros, id lobortis turpis",
+    price: "$32"
+  },
+  {
+    title: "Steak Filet",
+    desc: "usce tempus tempus maximus volutpat",
+    price: "$10"
+  },
+  {
+    title: "Cayenne Shrimp",
+    desc: "usce tempus tempus maximus volutpat",
+    price: "$08"
+  },
+]
+
+const menuData: MenuType[] = [
+  {
+    catergory: "Main dishes",
+    dishes: mainDisheData,
+    image : images.menuImg.MENUIMG1
+  },
+  {
+    catergory: "Starter",
+    dishes: StarterData,
+    image : images.menuImg.MENUIMG2
+  },
+  {
+    catergory: "Desserts",
+    dishes: mainDisheData,
+    image : images.menuImg.MENUIMG3
+  },
+  {
+    catergory: "Sea Food",
+    dishes: mainDisheData,
+    image : images.menuImg.MENUIMG4
+  },
+  {
+    catergory: "Drinks",
+    dishes: mainDisheData,
+    image : images.menuImg.MENUIMG5
+  },
+]
+
+export { dropDownMenuData, cartData, people, time, whyUsData, menuData };

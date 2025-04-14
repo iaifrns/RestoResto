@@ -13,6 +13,11 @@ import IMG3 from "../assets/img3.png";
 import WhyUsImg1 from "../assets/5.png";
 import WhyUsImg2 from "../assets/6.png";
 import WhyUsImg3 from "../assets/7.png";
+import MENUIMG1 from "../assets/menu/menu1.png"
+import MENUIMG2 from "../assets/menu/menu2.png"
+import MENUIMG3 from "../assets/menu/menu3.png"
+import MENUIMG4 from "../assets/menu/menu4.png"
+import MENUIMG5 from "../assets/menu/menu5.png"
 
 const images = {
   LANDING1,
@@ -30,6 +35,13 @@ const images = {
   WhyUsImg1,
   WhyUsImg2,
   WhyUsImg3,
+  menuImg: {
+    MENUIMG1,
+    MENUIMG2,
+    MENUIMG3,
+    MENUIMG4,
+    MENUIMG5,
+  }
 };
 
 export { images };

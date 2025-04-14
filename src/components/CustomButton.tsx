@@ -34,7 +34,7 @@ const LinkCustomButton = ({ text }: { text: string }) => {
       <p
         className={`${
           isHovered ? "text-gray-500" : "text-white"
-        } font-semibold text-sm`}
+        } font-semibold text-sm font-playfair`}
       >
         {text}
       </p>
@@ -59,14 +59,14 @@ const CustomButton = ({ text }: { text: string }) => {
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      className="px-8 flex gap-8 bg-secondary w-fit items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-white hover:border-white"
+      className="py-4 px-8 flex gap-8 bg-secondary w-fit items-center cursor-pointer transition-all duration-300 ease-in-out hover:bg-white hover:border-white"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <p
         className={`${
           isHovered ? "text-gray-500" : "text-white"
-        } font-semibold text-sm`}
+        } font-semibold text-sm font-playfair`}
       >
         {text}
       </p>
