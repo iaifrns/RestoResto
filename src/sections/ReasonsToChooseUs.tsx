@@ -1,3 +1,4 @@
+import { Parallax } from "react-scroll-parallax";
 import { CustomButton } from "../components/CustomButton";
 import { BottomRightBox, Dottes, TopBox } from "../components/DecorationBox";
 import WhyUsItem from "../components/WhyUsItem";
@@ -11,7 +12,14 @@ const ReasonsToChooseUs = () => {
       <div className="absolute w-full h-[80vh]">
         <img src={images.BG4} className="w-full h-full object-contain" />
       </div>
-      <ComponentContainer extraStyle="h-full flex flex-col justify-center items-center">
+      <div className="absolute z-10 w-full h-full">
+        <div className="w-[80%] h-full overflow-hidden flex justify-end items-end">
+          <Parallax speed={-10}>
+            <img src={images.BG1} alt={images.BG1} />
+          </Parallax>
+        </div>
+      </div>
+      <ComponentContainer extraStyle="h-full flex flex-col justify-center items-center z-20">
         <p className="text-secondary text-2xl font-playfair mb-3">
           Why people choose us
         </p>
@@ -28,12 +36,12 @@ const ReasonsToChooseUs = () => {
               <WhyUsItem index={index} item={item} />
             ))}
           </div>
-        <div className="w-full justify-end flex">
+          <div className="w-full justify-end flex">
             <div className="w-[60%] flex justify-between">
-                <CustomButton text="Read More About us" /> 
-                <BottomRightBox h="70px" w="70px" />
+              <CustomButton text="Read More About us" />
+              <BottomRightBox h="70px" w="70px" />
             </div>
-        </div>
+          </div>
         </div>
       </ComponentContainer>
     </div>

@@ -3,6 +3,7 @@ import { CustomButton } from "../components/CustomButton.tsx";
 import { Dottes, TopBox } from "../components/DecorationBox.tsx";
 import { images } from "../constants/images.ts";
 import ComponentContainer from "../layout/SectionContainer.tsx";
+import { Parallax } from "react-scroll-parallax";
 
 const OurStorySection = () => {
   const ref1 = useRef<HTMLImageElement | null>(null);
@@ -62,13 +63,17 @@ const OurStorySection = () => {
           <div className="flex h-full w-full">
             <div className="p-2 flex flex-col justify-between items-end px-4">
               <TopBox w="50px" h="60px" />
-              <img
-                ref={ref1}
-                src={images.BG2}
-                className={`w-[100px] h-[150px] object-cover transition-all duration-500 ease-out ${
-                  isFistElementVisible ? "translate-y-0" : "translate-y-15"
-                } `}
-              />
+              <div className="w-fit h-[50%] flex justify-end">
+                <Parallax speed={20} className="h-full">
+                  <img
+                    ref={ref1}
+                    src={images.BG2}
+                    className={`w-[100px] h-[150px] object-cover transition-all duration-500 ease-out ${
+                      isFistElementVisible ? "translate-y-0" : "translate-y-15"
+                    } `}
+                  />
+                </Parallax>
+              </div>
             </div>
             <div className="flex gap-8 flex-col justify-center w-fit">
               <p className="text-secondary font-playfair text-xl font-semibold">
@@ -90,13 +95,15 @@ const OurStorySection = () => {
               </p>
               <CustomButton text="Explore Our Menu" />
             </div>
-            <img
-              ref={ref2}
-              src={images.BG1}
-              className={`w-[150px] h-fit transition-all duration-500 ease-out ${
-                isSecondElementVisible ? "translate-y-0" : "-translate-y-15"
-              }`}
-            />
+            <Parallax speed={-10}>
+              <img
+                ref={ref2}
+                src={images.BG1}
+                className={`w-[150px] h-fit transition-all duration-500 ease-out ${
+                  isSecondElementVisible ? "translate-y-0" : "-translate-y-15"
+                }`}
+              />
+            </Parallax>
           </div>
           <div className="w-full h-full relative">
             <div className="absolute w-[100%] h-[100%]">

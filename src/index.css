@@ -13,6 +13,29 @@
   --rotate-x-180: "rotateX(180deg)";
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-fadeInOut {
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+.bg-radial-mask {
+  background: radial-gradient(circle, rgba(0,0,0,0.4) 10%, rgba(0,0,0,0.8) 100%);
+}
+
 .first-delay {
   transition-delay: 500ms;
 }

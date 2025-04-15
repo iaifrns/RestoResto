@@ -28,12 +28,15 @@ const MenuSection = () => {
   return (
     <div className="w-full h-[90vh] overflow-hidden">
       <ComponentContainer extraStyle="h-full relative">
+        {transition && (
+          <div className="absolute inset-0 bg-black opacity-0 animate-fadeInOut z-50 pointer-events-none"></div>
+        )}
         <div
-          className={`absolute w-full h-full transition-style duration-700 ease-in-out ${
-            transition ? "bg-[rgba(0,0,0)]" : "bg-[rgba(0,0,0,0.7)]"
-          } z-10`}
+          className={`absolute w-full h-full transition-style duration-700 ease-in-out bg-radial-mask z-10`}
         >
-          <div className={`${transition ? 'hidden' : 'flex'} w-full h-full flex-col justify-center items-center gap-8`}>
+          <div
+            className={`flex w-full h-full flex-col justify-center items-center gap-12`}
+          >
             <div className="w-full flex flex-col justify-center items-center ">
               <p className="text-xl font-bold font-playfair text-secondary">
                 Special menu offers.
@@ -67,7 +70,7 @@ const MenuSection = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex flex-col gap-8 w-full">
+              <div className="flex flex-col gap-10 w-full">
                 {menu.dishes.map((item, ind) => (
                   <div className="w-full gap-4 flex items-start transition-all ease-in-out duration-500">
                     <p className="text-secondary font-bold font-playfair text-xl">
@@ -83,7 +86,7 @@ const MenuSection = () => {
                           {item.price}
                         </p>
                       </div>
-                      <p className="text-gray-400">{item.desc}</p>
+                      <p className="text-gray-200">{item.desc}</p>
                     </div>
                   </div>
                 ))}
