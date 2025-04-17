@@ -1,3 +1,4 @@
+import { ChefInfoType } from "../types/chefInfoType";
 import { ItemStructureType } from "../types/inputType";
 import { Dishe, MenuType } from "../types/menuType";
 import { WhyUsType } from "../types/whyUsType";
@@ -172,74 +173,103 @@ const mainDisheData: Dishe[] = [
   {
     title: "Soft shell crab",
     desc: "Granny help you treat yourself with a different meal everyday",
-    price: "$29"
+    price: "$29",
   },
   {
     title: "Miso chicken",
     desc: "Etiam tempus felis eros, id lobortis turpis",
-    price: "$16"
+    price: "$16",
   },
   {
     title: "Fish pie",
     desc: "usce tempus tempus maximus volutpat",
-    price: "$09"
+    price: "$09",
   },
   {
     title: "Salmon riverland",
     desc: "Fusce a tellus tellus. Praesent neque arcu, efficitur sit amet",
-    price: "$45"
+    price: "$45",
   },
-]
+];
 
 const StarterData: Dishe[] = [
   {
     title: "Fried Potatoe",
     desc: "Granny help you treat yourself with a different meal everyday",
-    price: "$55"
+    price: "$55",
   },
   {
     title: "Doner Burger",
     desc: "Etiam tempus felis eros, id lobortis turpis",
-    price: "$32"
+    price: "$32",
   },
   {
     title: "Steak Filet",
     desc: "usce tempus tempus maximus volutpat",
-    price: "$10"
+    price: "$10",
   },
   {
     title: "Cayenne Shrimp",
     desc: "usce tempus tempus maximus volutpat",
-    price: "$08"
+    price: "$08",
   },
-]
+];
 
 const menuData: MenuType[] = [
   {
     catergory: "Main dishes",
     dishes: mainDisheData,
-    image : images.menuImg.MENUIMG1
+    image: images.menuImg.MENUIMG1,
   },
   {
     catergory: "Starter",
     dishes: StarterData,
-    image : images.menuImg.MENUIMG2
+    image: images.menuImg.MENUIMG2,
   },
   {
     catergory: "Desserts",
     dishes: mainDisheData,
-    image : images.menuImg.MENUIMG3
+    image: images.menuImg.MENUIMG3,
   },
   {
     catergory: "Sea Food",
     dishes: mainDisheData,
-    image : images.menuImg.MENUIMG4
+    image: images.menuImg.MENUIMG4,
   },
   {
     catergory: "Drinks",
     dishes: mainDisheData,
-    image : images.menuImg.MENUIMG5
+    image: images.menuImg.MENUIMG5,
   },
-]
+];
 
-export { dropDownMenuData, cartData, people, time, whyUsData, menuData };
+const chefInfo: ChefInfoType[] = [
+  {
+    name: "Kevin Nounou",
+    position: "Master chef in New York",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+    img: images.CHEF1,
+  },
+  {
+    name: "Franc Austin",
+    position: "Master chef in Florida",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+    img: images.CHEF2,
+  },
+  {
+    name: "Taylor Roberts",
+    position: "Master chef in Maiami",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+    img: images.CHEF3,
+  },
+];
+
+export {
+  dropDownMenuData,
+  cartData,
+  people,
+  time,
+  whyUsData,
+  menuData,
+  chefInfo,
+};

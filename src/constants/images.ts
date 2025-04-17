@@ -13,6 +13,9 @@ import IMG3 from "../assets/img3.png";
 import WhyUsImg1 from "../assets/5.png";
 import WhyUsImg2 from "../assets/6.png";
 import WhyUsImg3 from "../assets/7.png";
+import CHEF1 from "../assets/chef1.png";
+import CHEF2 from "../assets/chef2.png";
+import CHEF3 from "../assets/chef3.png";
 import MENUIMG1 from "../assets/menu/menu1.png"
 import MENUIMG2 from "../assets/menu/menu2.png"
 import MENUIMG3 from "../assets/menu/menu3.png"
@@ -41,7 +44,10 @@ const images = {
     MENUIMG3,
     MENUIMG4,
     MENUIMG5,
-  }
+  },
+  CHEF1,
+  CHEF2,
+  CHEF3,
 };
 
 export { images };

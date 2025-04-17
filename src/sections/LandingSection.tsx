@@ -80,7 +80,9 @@ const LandingPage = ({
                 <BottomBox />
               </div>
               <div className="flex flex-col justify-between w-full max-w-[1200px] 2xl:max-w-[1300px] h-full ">
-                <TopBar setShowReservationFrom={setShowReservationFrom} />
+                <div className="h-fit w-full top-0 sticky z-50">
+                  <TopBar setShowReservationFrom={setShowReservationFrom} />
+                </div>
                 <div className="w-full flex justify-between items-center">
                   <div className="w-[70%] flex flex-col gap-8">
                     <div>

@@ -5,6 +5,7 @@
 
 @theme {
   --color-primary: #292929;
+  --color-bgcolor: #383838;
   --color-secondary: #c19d60;
   --font-shoulders: "Big Shoulders Stencil", sans-serif;
   --font-playfair: "Playfair Display", sans-serif;
