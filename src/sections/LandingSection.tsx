@@ -36,7 +36,7 @@ const LandingPage = ({
     <div className="flex w-full h-full justify-center items-center bg-primary">
       <ComponentContainer extraStyle={"h-screen"}>
         <div className="absolute w-full h-full z-10">
-          <div className="w-full h-full bg-[rgba(0,0,0,0.75)] flex flex-col justify-center items-center p-8 gap-2">
+          <div className="w-full h-full bg-radial-mask flex flex-col justify-center items-center p-8 gap-2">
             <div
               className={
                 "w-full flex justify-center 2xl:justify-end items-center max-w-[1270px]"
