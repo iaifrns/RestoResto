@@ -1,6 +1,7 @@
 import { ChefInfoType } from "../types/chefInfoType";
 import { ItemStructureType } from "../types/inputType";
 import { Dishe, MenuType } from "../types/menuType";
+import { EventType } from "../types/occation";
 import { WhyUsType } from "../types/whyUsType";
 import { images } from "./images";
 
@@ -264,6 +265,34 @@ const chefInfo: ChefInfoType[] = [
   },
 ];
 
+const eventData: EventType[] = [
+  {
+    eventName: "Freedom Day Celebration",
+    date: "14 October 2022",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+  },
+  {
+    eventName: "Jass Band Live Event",
+    date: "16 November 2022",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+  },
+  {
+    eventName: "Wine and Steak Day",
+    date: "24 November 2022",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+  },
+  {
+    eventName: "Sea Food Day",
+    date: "10 December 2022",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+  },
+  {
+    eventName: "Christmas Day",
+    date: "25 December 2022",
+    desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit sed nobis praesentium et excepturi laudantium ipsam",
+  },
+];
+
 export {
   dropDownMenuData,
   cartData,
@@ -272,4 +301,5 @@ export {
   whyUsData,
   menuData,
   chefInfo,
+  eventData,
 };

@@ -8,6 +8,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import ReasonsToChooseUs from "./sections/ReasonsToChooseUs.tsx";
 import MenuSection from "./sections/MenuSection.tsx";
 import OurChefSection from "./sections/OurChefSection.tsx";
+import BookingSection from "./sections/BookingSection.tsx";
 
 function App() {
   const [showReservationFrom, setShowReservationFrom] = useState(false);
@@ -38,6 +39,8 @@ function App() {
         <MenuSection />
         {/* our chef section */}
         <OurChefSection />
+        {/* booking section */}
+        <BookingSection />
         {/* popup menu resevation */}
         <PopUpReservation show={showReservationFrom} setShow={setShowReservationFrom} />
       </div>

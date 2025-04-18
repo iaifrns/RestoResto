@@ -1,3 +1,4 @@
+
 const TopBox = ({ w = "100px", h = "100px" }: { w?: string; h?: string }) => {
   return (
     <div
@@ -38,7 +39,15 @@ const BottomRightBox = ({
 };
 
 const Dottes = () => {
-  return <p className="text-4xl text-white text-center w-fit">......</p>;
+  const dotes = new Array(6).fill("");
+  return (
+    <div className="w-fit flex text-white h-fit gap-1">
+      {dotes.map((_,i) => (
+        <div key={i} className="p-[2px] bg-white rounded-full"></div>
+      ))}
+    </div>
+  );
 };
 
-export { TopBox, BottomBox, Dottes, BottomRightBox };
+export { BottomBox, BottomRightBox, Dottes, TopBox };
+
