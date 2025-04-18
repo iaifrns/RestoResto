@@ -33,7 +33,10 @@ const LandingPage = ({
   }, []);
 
   return (
-    <div className="flex w-full h-full justify-center items-center bg-primary">
+    <div
+      className="flex w-full h-full justify-center items-center bg-primary"
+      id="landing"
+    >
       <ComponentContainer extraStyle={"h-screen"}>
         <div className="absolute w-full h-full z-10">
           <div className="w-full h-full bg-radial-mask flex flex-col justify-center items-center p-8 gap-2">
@@ -116,11 +119,13 @@ const LandingPage = ({
                   </div>
                 </div>
                 <div className="flex justify-end w-full max-w-[1250px]">
-                  <Icon
-                    icon={"icon-park-outline:double-down"}
-                    width={"32"}
-                    className="text-white hover:text-secondary cursor-pointer animate-bounce"
-                  />
+                  <a href="#footer">
+                    <Icon
+                      icon={"icon-park-outline:double-down"}
+                      width={"32"}
+                      className="text-white hover:text-secondary cursor-pointer animate-bounce"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

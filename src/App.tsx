@@ -9,6 +9,7 @@ import ReasonsToChooseUs from "./sections/ReasonsToChooseUs.tsx";
 import MenuSection from "./sections/MenuSection.tsx";
 import OurChefSection from "./sections/OurChefSection.tsx";
 import BookingSection from "./sections/BookingSection.tsx";
+import FooterSection from "./sections/FooterSection.tsx";
 
 function App() {
   const [showReservationFrom, setShowReservationFrom] = useState(false);
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <ParallaxProvider>
-      <div className="h-full w-full flex flex-col justify-center items-center relative bg-primary gap-16">
+      <div className="h-full w-full flex flex-col justify-center items-center relative bg-primary gap-16 ">
         {/* landing page section */}
         <LandingPage setShowReservationFrom={setShowReservationFrom} />
         {/* about us section */}
@@ -41,6 +42,8 @@ function App() {
         <OurChefSection />
         {/* booking section */}
         <BookingSection />
+        {/* Footer */}
+        <FooterSection />
         {/* popup menu resevation */}
         <PopUpReservation show={showReservationFrom} setShow={setShowReservationFrom} />
       </div>
