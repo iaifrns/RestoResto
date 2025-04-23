@@ -2,6 +2,7 @@ import { ChefInfoType } from "../types/chefInfoType";
 import { ItemStructureType } from "../types/inputType";
 import { Dishe, MenuType } from "../types/menuType";
 import { EventType } from "../types/occation";
+import { TestimonyType } from "../types/testimonyType";
 import { WhyUsType } from "../types/whyUsType";
 import { images } from "./images";
 
@@ -293,6 +294,34 @@ const eventData: EventType[] = [
   },
 ];
 
+const testimonyData: TestimonyType[] = [
+  {
+    img: images.GIRL1,
+    name: "Kevin Kenfack",
+    text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
+  },
+  {
+    img: images.IMG1,
+    name: "Ndambose Daniel",
+    text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
+  },
+  {
+    img: images.GIRL2,
+    name: "Christina Agie",
+    text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
+  },
+  {
+    img: images.IMG1,
+    name: "Franc Nsini",
+    text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
+  },
+  {
+    img: images.IMG1,
+    name: "Max Lilian",
+    text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
+  },
+];
+
 export {
   dropDownMenuData,
   cartData,
@@ -302,4 +331,5 @@ export {
   menuData,
   chefInfo,
   eventData,
+  testimonyData,
 };
