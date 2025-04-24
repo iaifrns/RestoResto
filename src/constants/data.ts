@@ -301,7 +301,12 @@ const testimonyData: TestimonyType[] = [
     text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
   },
   {
-    img: images.IMG1,
+    img: images.MAN2,
+    name: "Franc Nsini",
+    text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
+  },
+  {
+    img: images.MAN1,
     name: "Ndambose Daniel",
     text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
   },
@@ -311,12 +316,7 @@ const testimonyData: TestimonyType[] = [
     text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
   },
   {
-    img: images.IMG1,
-    name: "Franc Nsini",
-    text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
-  },
-  {
-    img: images.IMG1,
+    img: images.MAN3,
     name: "Max Lilian",
     text: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. ",
   },

@@ -18,11 +18,14 @@ import CHEF2 from "../assets/chef2.png";
 import CHEF3 from "../assets/chef3.png";
 import GIRL1 from "../assets/girl1.png";
 import GIRL2 from "../assets/girl2.png";
-import MENUIMG1 from "../assets/menu/menu1.png"
-import MENUIMG2 from "../assets/menu/menu2.png"
-import MENUIMG3 from "../assets/menu/menu3.png"
-import MENUIMG4 from "../assets/menu/menu4.png"
-import MENUIMG5 from "../assets/menu/menu5.png"
+import MAN1 from "../assets/man1.png";
+import MAN2 from "../assets/man 2.png";
+import MAN3 from "../assets/man3.png";
+import MENUIMG1 from "../assets/menu/menu1.png";
+import MENUIMG2 from "../assets/menu/menu2.png";
+import MENUIMG3 from "../assets/menu/menu3.png";
+import MENUIMG4 from "../assets/menu/menu4.png";
+import MENUIMG5 from "../assets/menu/menu5.png";
 
 const images = {
   LANDING1,
@@ -52,6 +55,9 @@ const images = {
   CHEF3,
   GIRL1,
   GIRL2,
+  MAN1,
+  MAN2,
+  MAN3,
 };
 
 export { images };

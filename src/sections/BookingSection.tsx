@@ -23,7 +23,7 @@ const BookingSection = () => {
   };
 
   return (
-    <div className="w-full h-[70vh]">
+    <div className="w-full">
       <ComponentContainer extraStyle="h-full flex justify-between">
         <div className="w-full h-full relative">
           <div className="absolute w-full h-full">
@@ -36,7 +36,7 @@ const BookingSection = () => {
                   Upcoming Events
                 </p>
                 <Dottes />
-                <div className="w-full flex justify-between items-center gap-8 mt-6">
+                <div className="w-full flex justify-between items-center 2xl:gap-8 gap-2 mt-6">
                   <Icon
                     icon="ic:round-arrow-left"
                     width="40"
@@ -97,7 +97,7 @@ const BookingSection = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="w-full h-full relative overflow-hidden">
+        <div className="w-full relative overflow-hidden">
           <div className="bg-[rgba(0,0,0,0.5)] absolute w-full h-full z-10">
             <div className="flex flex-col justify-center items-center gap-4 w-full h-full">
               <Icon
@@ -115,7 +115,7 @@ const BookingSection = () => {
               <CustomButton text="Buy online" />
             </div>
           </div>
-          <Parallax speed={-10} className="h-[90vh]">
+          <Parallax speed={-10} className="h-full">
             <img
               src={images.LANDING1}
               alt={images.LANDING1}

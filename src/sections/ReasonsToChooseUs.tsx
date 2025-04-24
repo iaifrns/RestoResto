@@ -8,7 +8,7 @@ import ComponentContainer from "../layout/SectionContainer";
 
 const ReasonsToChooseUs = () => {
   return (
-    <div className="w-full h-[80vh] bg-no-repeat bg-cover bg-center relative">
+    <div className="w-full  bg-no-repeat bg-cover bg-center relative">
       <div className="absolute w-full h-[80vh]">
         <img src={images.BG4} className="w-full h-full object-contain" />
       </div>
@@ -26,7 +26,7 @@ const ReasonsToChooseUs = () => {
         <p className="text-white font-bold text-[32px] font-poppins">
           Prepare for first-class service
         </p>
-        <div className="flex flex-col w-[80%]">
+        <div className="flex flex-col w-full 2xl:w-[80%]">
           <div className="w-[50%] flex justify-between items-center ">
             <TopBox w="70px" h="70px" />
             <Dottes />

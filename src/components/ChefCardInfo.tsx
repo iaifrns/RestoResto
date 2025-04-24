@@ -23,7 +23,7 @@ const ChefCardInfo = ({ chefInfo }: { chefInfo: ChefInfoType }) => {
   return (
     <div className="bg-bgcolor w-[350px] flex flex-col items-center justify-center gap-4">
       <div
-        className="w-full h-[350px] relative"
+        className="w-full h-[300px] relative"
         onMouseEnter={() => setShowMedia(true)}
         onMouseLeave={() => setShowMedia(false)}
       >
@@ -32,11 +32,14 @@ const ChefCardInfo = ({ chefInfo }: { chefInfo: ChefInfoType }) => {
             !showMedia ? "opacity-0" : "opacity-100"
           } w-full h-full absolute bg-[rgba(0,0,0,0.5)]`}
         >
-          <div className="flex justify-evenly items-center h-full w-full">
+          <div className="w-full flex h-full items-center justify-center flex-col gap-4">
+            <p className="font-semibold font-playfair text-white">Follow</p>
+          <div className="flex justify-center items-center gap-2">
             {icons.map((item, ind) => (
               <SocialMediaLink icon={item} key={ind} />
             ))}
           </div>
+          </div> 
         </div>
         <img src={img} alt={img} className="w-full h-full object-cover" />
       </div>

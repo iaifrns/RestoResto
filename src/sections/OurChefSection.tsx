@@ -6,11 +6,11 @@ import ComponentContainer from "../layout/SectionContainer";
 
 const OurChefSection = () => {
   return (
-    <div className="h-[100vh] w-full">
+    <div className=" w-full">
       <ComponentContainer extraStyle="h-full flex flex-col items-center justify-center gap-4">
         <p className="text-xl text-secondary font-playfair font-semibold">Our awesome team</p>
         <p className="text-[40px] font-bold text-white font-playfair">Met Our Chefs</p>
-        <div className="w-[80%] flex flex-col">
+        <div className="2xl:w-[80%] w-full flex flex-col">
             <div className="flex justify-between w-[52%] items-center">
                 <TopBox h="70px" w="70px" />
                 <Dottes/>

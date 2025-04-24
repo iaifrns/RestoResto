@@ -26,7 +26,7 @@ const MenuSection = () => {
   }, [transition]);
 
   return (
-    <div className="w-full h-[90vh] overflow-hidden">
+    <div className="w-full overflow-hidden">
       <ComponentContainer extraStyle="h-full relative">
         {transition && (
           <div className="absolute inset-0 bg-black opacity-0 animate-fadeInOut z-50 pointer-events-none"></div>
