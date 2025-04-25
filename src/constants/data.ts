@@ -9,7 +9,7 @@ import { images } from "./images";
 import routesPath from "./routes";
 
 const dropDownMenuData: Record<string, Array<Record<string, string>>> = {
-  menu: [{text: "MENU1", to: routesPath.DEFAULTMENU}, {text: "MENU2", to: ''}, {text: "MENU3", to: ''}],
+  menu: [{text: "MENU1", to: routesPath.DEFAULTMENU}, {text: "MENU2", to: routesPath.MENU}, {text: "MENU3", to: ''}],
   pages: [
     {text: "SHOP", to: ''},
     {text: "PRODUCT SINGLE", to: ''},
@@ -221,27 +221,27 @@ const StarterData: Dishe[] = [
 
 const menuData: MenuType[] = [
   {
-    catergory: "Main dishes",
+    catergory: MenuCategory.MAINDISHES,
     dishes: mainDisheData,
     image: images.menuImg.MENUIMG1,
   },
   {
-    catergory: "Starter",
+    catergory: MenuCategory.STARTER,
     dishes: StarterData,
     image: images.menuImg.MENUIMG2,
   },
   {
-    catergory: "Desserts",
+    catergory: MenuCategory.DESSERTS,
     dishes: mainDisheData,
     image: images.menuImg.MENUIMG3,
   },
   {
-    catergory: "Sea Food",
+    catergory: MenuCategory.SEAFOOD,
     dishes: mainDisheData,
     image: images.menuImg.MENUIMG4,
   },
   {
-    catergory: "Drinks",
+    catergory: MenuCategory.DRINKS,
     dishes: mainDisheData,
     image: images.menuImg.MENUIMG5,
   },

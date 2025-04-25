@@ -11,7 +11,7 @@ import HeaderSection from "../sections/HeaderSection";
 import TopMenuSection from "../sections/TopMenuSection";
 import { MenuItem } from "../types/menuType";
 
-const ItemDisplay = ({
+export const ItemDisplay = ({
   text,
   count,
   active,
@@ -42,7 +42,7 @@ const ItemDisplay = ({
   );
 };
 
-const DishDisplay = ({ dish, show }: { dish: MenuItem; show: boolean }) => {
+export const DishDisplay = ({ dish, show }: { dish: MenuItem; show: boolean }) => {
   const [showbutton, setShowButton] = useState(false);
 
   return (
