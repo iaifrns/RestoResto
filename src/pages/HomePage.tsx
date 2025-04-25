@@ -11,26 +11,28 @@ import OurChefSection from "../sections/OurChefSection.tsx";
 import BookingSection from "../sections/BookingSection.tsx";
 import FooterSection from "../sections/FooterSection.tsx";
 import Testimony from "../sections/Testimony.tsx";
+import TopMenuSection from "../sections/TopMenuSection.tsx";
 
 const HomePage = () => {
-    const [showReservationFrom, setShowReservationFrom] = useState(false);
+  const [showReservationFrom, setShowReservationFrom] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(()=>{
-    setTimeout(()=>{
-      setIsLoading(false)
-    },2000)
-  },[])
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
 
-  if(isLoading){
-    return <MainLoader />
+  if (isLoading) {
+    return <MainLoader />;
   }
 
   return (
     <ParallaxProvider>
-      <div className="h-full w-full flex flex-col justify-center items-center relative bg-primary gap-16 ">
+      <div className="h-full w-full flex flex-col justify-center items-center relative bg-primary">
+        <TopMenuSection setShowReservationFrom={setShowReservationFrom} />
         {/* landing page section */}
-        <LandingPage setShowReservationFrom={setShowReservationFrom} />
+        <LandingPage />
         {/* about us section */}
         <OurStorySection />
         {/* restaurant contact details */}
@@ -48,10 +50,13 @@ const HomePage = () => {
         {/* Footer */}
         <FooterSection />
         {/* popup menu resevation */}
-        <PopUpReservation show={showReservationFrom} setShow={setShowReservationFrom} />
+        <PopUpReservation
+          show={showReservationFrom}
+          setShow={setShowReservationFrom}
+        />
       </div>
     </ParallaxProvider>
   );
-}
+};
 
 export default HomePage;

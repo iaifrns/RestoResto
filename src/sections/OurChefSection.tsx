@@ -6,7 +6,7 @@ import ComponentContainer from "../layout/SectionContainer";
 
 const OurChefSection = () => {
   return (
-    <div className=" w-full">
+    <div className="w-full py-10">
       <ComponentContainer extraStyle="h-full flex flex-col items-center justify-center gap-4">
         <p className="text-xl text-secondary font-playfair font-semibold">Our awesome team</p>
         <p className="text-[40px] font-bold text-white font-playfair">Met Our Chefs</p>

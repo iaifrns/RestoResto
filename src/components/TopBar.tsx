@@ -73,7 +73,7 @@ const TopBar = ({
   const [isCartHovered, setIsCartHovered] = useState(false);
   const [isShareIconHovered, setIsShareIconHovered] = useState(false);
   return (
-    <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 max-w-[1200px] border-[1px] relative">
+    <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 max-w-[1200px] border-[1px] relative ">
       <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
       <div className="flex items-center h-full">
         <div className="flex gap-4 border-r border-[#eee] h-full">

@@ -8,7 +8,7 @@ import ComponentContainer from "../layout/SectionContainer";
 
 const ReasonsToChooseUs = () => {
   return (
-    <div className="w-full  bg-no-repeat bg-cover bg-center relative">
+    <div className="w-full overflow-hidden bg-no-repeat bg-cover bg-center relative py-10">
       <div className="absolute w-full h-[80vh]">
         <img src={images.BG4} className="w-full h-full object-contain" />
       </div>
@@ -19,7 +19,7 @@ const ReasonsToChooseUs = () => {
           </Parallax>
         </div>
       </div>
-      <ComponentContainer extraStyle="h-full flex flex-col justify-center items-center z-20">
+      <ComponentContainer extraStyle="h-full flex flex-col justify-center items-center z-10">
         <p className="text-secondary text-2xl font-playfair mb-3">
           Why people choose us
         </p>

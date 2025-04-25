@@ -57,7 +57,7 @@ const OurStorySection = () => {
   }, []);
 
   return (
-    <div className={"w-full bg-primary flex justify-between"}>
+    <div className={"w-full bg-primary flex justify-between my-8"}>
       <ComponentContainer extraStyle={"h-[70vh] p-8"}>
         <div className="w-full flex justify-between h-full">
           <div className="flex h-full w-full">

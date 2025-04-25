@@ -18,7 +18,7 @@ const FooterSection = () => {
   return (
     <div className="w-full overflow-hidden" id="footer">
         <ComponentContainer extraStyle="flex flex-col justify-end items-center gap-8">
-          <div className="flex gap-8 flex-col w-[85%]">
+          <div className="flex gap-8 flex-col w-[85%] py-8">
             <div className="w-full flex justify-between">
               <div className="flex gap-8 items-center">
                 <p className="text-2xl font-bold text-white font-mono">
