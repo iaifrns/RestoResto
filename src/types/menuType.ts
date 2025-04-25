@@ -9,3 +9,9 @@ export interface MenuType {
     dishes: Dishe[],
     image: string
 }
+
+export interface MenuItem {
+    catergory: string,
+    dishes: Dishe,
+    image: string
+}

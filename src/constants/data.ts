@@ -1,21 +1,23 @@
+import { MenuCategory } from "../enum/menu";
 import { ChefInfoType } from "../types/chefInfoType";
 import { ItemStructureType } from "../types/inputType";
-import { Dishe, MenuType } from "../types/menuType";
+import { Dishe, MenuItem, MenuType } from "../types/menuType";
 import { EventType } from "../types/occation";
 import { TestimonyType } from "../types/testimonyType";
 import { WhyUsType } from "../types/whyUsType";
 import { images } from "./images";
+import routesPath from "./routes";
 
-const dropDownMenuData: Record<string, Array<string>> = {
-  menu: ["MENU1", "MENU2", "MENU3"],
+const dropDownMenuData: Record<string, Array<Record<string, string>>> = {
+  menu: [{text: "MENU1", to: routesPath.DEFAULTMENU}, {text: "MENU2", to: ''}, {text: "MENU3", to: ''}],
   pages: [
-    "SHOP",
-    "PRODUCT SINGLE",
-    "CART",
-    "GALLERY",
-    "BLOG SINGLE",
-    "404",
-    "COMING SOON",
+    {text: "SHOP", to: ''},
+    {text: "PRODUCT SINGLE", to: ''},
+    {text: "CART", to: ''},
+    {text: "GALLERY", to: ''},
+    {text: "BLOG SINGLE", to: ''},
+    {text: "404", to: ''},
+    {text: "COMING SOON", to: ''}
   ],
 };
 
@@ -322,6 +324,243 @@ const testimonyData: TestimonyType[] = [
   },
 ];
 
+const dishes: MenuItem[] = [
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.IMG1,
+    dishes: {
+      desc: "Seasoned with an herb crust, served with au jus and handcarved to order.",
+      title: "Soft shell crab",
+      price: "$34"
+    }
+  },
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.IMG2,
+    dishes: {
+      desc: "Usce tempus tempus maximus volutpat",
+      title: "Victoria's Filet Mignon",
+      price: "$14"
+    }
+  },
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.IMG3,
+    dishes: {
+      desc: "Integer nec lacinia arcu, vel rhoncus leo aliquet.",
+      title: "Fish pie",
+      price: "$27"
+    }
+  },
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.WhyUsImg1,
+    dishes: {
+      desc: "Pellentesque eros mi, faucibus tempor scelerisque nec, efficitur nec nunc.",
+      title: "Prime Cuts of Beef",
+      price: "$21"
+    }
+  },
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.WhyUsImg2,
+    dishes: {
+      desc: "Our tender, juicy filet paired with a steamed lobster tail. Served with your choice of signature potato and one freshly made side.",
+      title: "Miso chicken",
+      price: "$18"
+    }
+  },
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.WhyUsImg3,
+    dishes: {
+      desc: "Pellentesque eros mi, faucibus tempor scelerisque nec, efficitur nec nunc.",
+      title: "Garden salad",
+      price: "$33"
+    }
+  },
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.LANDING1,
+    dishes: {
+      desc: "Fusce a tellus tellus. Praesent neque arcu, efficitur sit amet",
+      title: "Salmon Riverland",
+      price: "$15"
+    }
+  },
+  {
+    catergory: MenuCategory.MAINDISHES,
+    image: images.LANDING2,
+    dishes: {
+      desc: "Fusce a tellus tellus. Praesent neque arcu, efficitur sit amet",
+      title: "Slow-Roasted Prime Rib",
+      price: "$19"
+    }
+  },
+  {
+    catergory: MenuCategory.STARTER,
+    image: images.LANDING3,
+    dishes: {
+      desc: "Granny help you treat yourself with a different meal everyday",
+      title: "Fried Potatoes",
+      price: "$27"
+    }
+  },
+  {
+    catergory: MenuCategory.STARTER,
+    image: images.LANDING4,
+    dishes: {
+      desc: "Granny help you treat yourself with a different meal everyday",
+      title: "Steak Filet",
+      price: "$24"
+    }
+  },
+  {
+    catergory: MenuCategory.STARTER,
+    image: images.IMG1,
+    dishes: {
+      desc: "Etiam fermentum justo nec auctor pretium",
+      title: "Meatball tagliatelle",
+      price: "$22"
+    }
+  },
+  {
+    catergory: MenuCategory.STARTER,
+    image: images.LANDING1,
+    dishes: {
+      desc: "Etiam tempus felis eros, id lobortis turpis",
+      title: "Doner Burger",
+      price: "$11"
+    }
+  },
+  {
+    catergory: MenuCategory.DESSERTS,
+    image: images.WhyUsImg1,
+    dishes: {
+      desc: "Cum sociis natoque penatibus et magnis",
+      title: "Cayenne Shrimp",
+      price: "$26"
+    }
+  },
+  {
+    catergory: MenuCategory.DESSERTS,
+    image: images.IMG2,
+    dishes: {
+      desc: "Granny help you treat yourself with a different meal everyday",
+      title: "Soft shell crab",
+      price: "$61"
+    }
+  },
+  {
+    catergory: MenuCategory.DESSERTS,
+    image: images.LANDING2,
+    dishes: {
+      desc: "usce tempus tempus maximus volutpat",
+      title: "Creme Brulee",
+      price: "$34"
+    }
+  },
+  {
+    catergory: MenuCategory.DESSERTS,
+    image: images.WhyUsImg2,
+    dishes: {
+      desc: "Etiam tempus felis eros, id lobortis turpis",
+      title: "Tarte Tatin",
+      price: "$21"
+    }
+  },
+  {
+    catergory: MenuCategory.DESSERTS,
+    image: images.LANDING3,
+    dishes: {
+      desc: "usce tempus tempus maximus volutpat",
+      title: "Lemon Meringue",
+      price: "$13"
+    }
+  },
+  {
+    catergory: MenuCategory.SEAFOOD,
+    image: images.IMG3,
+    dishes: {
+      desc: "Granny help you treat yourself with a different meal everyday",
+      title: "Lobster with melted mozarella",
+      price: "$16"
+    }
+  },
+  {
+    catergory: MenuCategory.SEAFOOD,
+    image: images.WhyUsImg3,
+    dishes: {
+      desc: "Granny help you treat yourself with a different meal everyday",
+      title: "Filet De Saumon",
+      price: "$44"
+    }
+  },
+  {
+    catergory: MenuCategory.SEAFOOD,
+    image: images.LANDING4,
+    dishes: {
+      desc: "Etiam tempus felis eros, id lobortis turpis",
+      title: "Butterfly fried shrimps platter",
+      price: "$35"
+    }
+  },
+  {
+    catergory: MenuCategory.SEAFOOD,
+    image: images.IMG1,
+    dishes: {
+      desc: "Etiam tempus felis eros, id lobortis turpis",
+      title: "Chapel Down",
+      price: "$43"
+    }
+  },
+  {
+    catergory: MenuCategory.DRINKS,
+    image: images.WhyUsImg1,
+    dishes: {
+      desc: "Granny help you treat yourself with a different meal everyday",
+      title: "Kiwi Coctail",
+      price: "$16"
+    }
+  },
+  {
+    catergory: MenuCategory.DRINKS,
+    image: images.IMG2,
+    dishes: {
+      desc: "usce tempus tempus maximus volutpat",
+      title: "Red Mojitos",
+      price: "$19"
+    }
+  },
+  {
+    catergory: MenuCategory.DRINKS,
+    image: images.WhyUsImg2,
+    dishes: {
+      desc: "usce tempus tempus maximus volutpat",
+      title: "Italian Soup",
+      price: "$12"
+    }
+  },
+  {
+    catergory: MenuCategory.DRINKS,
+    image: images.LANDING1,
+    dishes: {
+      desc: "Etiam tempus felis eros, id lobortis turpis",
+      title: "Summer Beer",
+      price: "$13"
+    }
+  },
+  {
+    catergory: MenuCategory.DRINKS,
+    image: images.IMG3,
+    dishes: {
+      desc: "usce tempus tempus maximus volutpat",
+      title: "Cabernet Sauvignon",
+      price: "$08"
+    }
+  },
+]
+
 export {
   dropDownMenuData,
   cartData,
@@ -332,4 +571,5 @@ export {
   chefInfo,
   eventData,
   testimonyData,
+  dishes
 };

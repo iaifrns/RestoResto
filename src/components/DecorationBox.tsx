@@ -49,5 +49,7 @@ const Dottes = () => {
   );
 };
 
-export { BottomBox, BottomRightBox, Dottes, TopBox };
+const DottedLines = () => (<div className="w-[200px] h-[1px] border-t border-dotted border-secondary"></div>)
+
+export { BottomBox, BottomRightBox, Dottes, TopBox, DottedLines };
 

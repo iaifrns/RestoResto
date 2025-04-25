@@ -1,17 +1,21 @@
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { cartData, dropDownMenuData } from "../constants/data";
 import { MenuButton } from "./CustomButton";
 import CartItem from "./CartItem";
+import { useNavigate } from "react-router-dom";
+import { PopupContext } from "../context/PopupProvider";
 
 const MenuBoxItem = ({
   text,
   icon = false,
   dropData,
+  to,
 }: {
   text: string;
   icon?: boolean;
-  dropData?: Array<string>;
+  dropData?: Array<Record<string, string>>;
+  to?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const handleHover = (value: boolean) => {
@@ -19,11 +23,17 @@ const MenuBoxItem = ({
       setIsHovered(value);
     }
   };
+
+  const navigate = useNavigate();
+
   return (
     <div
       onMouseEnter={() => handleHover(true)}
       onMouseLeave={() => handleHover(false)}
       className="text-white hover:text-secondary font-poppins font-semibold text-xs flex items-center cursor-pointer relative w-[70px] justify-center"
+      onClick={() => {
+        if (!icon) navigate(to ?? "/");
+      }}
     >
       <p>{text}</p>
       {icon && (
@@ -44,8 +54,11 @@ const MenuBoxItem = ({
       >
         <div className="w-[180px] bg-primary flex flex-col gap-2">
           {dropData?.map((item) => (
-            <p className="text-white font-semibold font-poppins w-full p-2 hover:bg-gray-700">
-              {item}
+            <p
+              className="text-white font-semibold font-poppins w-full p-2 hover:bg-gray-700"
+              onClick={() => navigate(item.to)}
+            >
+              {item.text}
             </p>
           ))}
         </div>
@@ -62,16 +75,15 @@ const medias = [
   { text: "Linkedin", delay: "fieth-delay" },
 ];
 
-const TopBar = ({
-  setShowReservationFrom,
-}: {
-  setShowReservationFrom: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const TopBar = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [annousement, setAnnousement] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [isCartHovered, setIsCartHovered] = useState(false);
   const [isShareIconHovered, setIsShareIconHovered] = useState(false);
+
+const {setShowPopUp} = useContext(PopupContext)
+
   return (
     <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 max-w-[1200px] border-[1px] relative ">
       <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
@@ -156,7 +168,7 @@ const TopBar = ({
           className="flex justify-center items-center cursor-pointer p-4 h-full relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          onClick={() => setShowReservationFrom(true)}
+          onClick={() => setShowPopUp(true)}
         >
           <div
             className={`absolute w-full bg-secondary ${

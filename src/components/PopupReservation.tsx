@@ -1,36 +1,33 @@
 import { Icon } from "@iconify/react";
 import { images } from "../constants/images";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { initialFormResevationState } from "../constants/initialFormResevationState";
 import { inputType } from "../types/inputType";
 import { CustomTextArea, NormalInputBox, SelectInput } from "./CustomInput";
 import { people, time } from "../constants/data";
 import { LinkCustomButton } from "./CustomButton";
+import { PopupContext } from "../context/PopupProvider";
 
-const PopUpReservation = ({
-  show,
-  setShow,
-}: {
-  show: boolean;
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const PopUpReservation = () => {
   const [reservationFrom, setReservationFrom] = useState<
     Record<string, inputType>
   >(initialFormResevationState);
 
+  const {showPopUp, setShowPopUp} = useContext(PopupContext)
+
   return (
     <div
       className={`fixed transition-color duration-[1s] ease-out-in w-full h-screen ${
-        show
+        showPopUp
           ? "opacity-100 pointer-events-auto"
           : "opacity-0 pointer-events-none"
       } bg-[rgba(41,41,41,0.8)] z-20 top-0`}
-      onClick={() => setShow(false)}
+      onClick={() => setShowPopUp(false)}
     >
       <div className="flex justify-center items-center w-full h-full">
         <div
-          className={`sticky w-[700px] h-[650px] bg-[#252525] flex justify-center items-center relative transition-all duration-500 ease-out ${
-            show
+          className={`w-[700px] h-[650px] bg-[#252525] flex justify-center items-center relative transition-all duration-500 ease-out ${
+            showPopUp
               ? "opacity-100 delay-[1s] translate-y-0"
               : "opacity-0 translate-y-10"
           }`}
@@ -161,7 +158,7 @@ const PopUpReservation = ({
           </div>
           <div
             className="p-2 border border-gray-600 absolute bg-primary top-0 right-0 m-4"
-            onClick={() => setShow(false)}
+            onClick={() => setShowPopUp(false)}
           >
             <Icon
               icon={"iconoir:cancel"}

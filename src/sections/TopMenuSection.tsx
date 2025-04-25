@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import TopBar from "../components/TopBar";
-const TopMenuSection = ({
-  setShowReservationFrom,
-}: {
-  setShowReservationFrom: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const TopMenuSection = () => {
 
     const [isPageAtTheTop, setIsPageAtTheTop] = useState(true);
 
@@ -52,7 +48,7 @@ const TopMenuSection = ({
         </div>
       </div>
       <div className="z-30 w-full flex items-center justify-center">
-        <TopBar setShowReservationFrom={setShowReservationFrom} />
+        <TopBar />
       </div>
     </div>
   );

@@ -14,7 +14,6 @@ import Testimony from "../sections/Testimony.tsx";
 import TopMenuSection from "../sections/TopMenuSection.tsx";
 
 const HomePage = () => {
-  const [showReservationFrom, setShowReservationFrom] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -30,7 +29,7 @@ const HomePage = () => {
   return (
     <ParallaxProvider>
       <div className="h-full w-full flex flex-col justify-center items-center relative bg-primary">
-        <TopMenuSection setShowReservationFrom={setShowReservationFrom} />
+        <TopMenuSection />
         {/* landing page section */}
         <LandingPage />
         {/* about us section */}
@@ -50,10 +49,7 @@ const HomePage = () => {
         {/* Footer */}
         <FooterSection />
         {/* popup menu resevation */}
-        <PopUpReservation
-          show={showReservationFrom}
-          setShow={setShowReservationFrom}
-        />
+        <PopUpReservation />
       </div>
     </ParallaxProvider>
   );
