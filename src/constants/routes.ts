@@ -1,7 +1,8 @@
 const routesPath = {
-    HOME: "",
+    HOME: "/",
     DEFAULTMENU: "/default_menu",
-    MENU: '/menu'
+    MENU: '/menu',
+    ABOUT: '/about_us'
 }
 
 export default routesPath

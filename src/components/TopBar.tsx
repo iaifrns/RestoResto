@@ -5,6 +5,7 @@ import { MenuButton } from "./CustomButton";
 import CartItem from "./CartItem";
 import { useNavigate } from "react-router-dom";
 import { PopupContext } from "../context/PopupProvider";
+import routesPath from "../constants/routes";
 
 const MenuBoxItem = ({
   text,
@@ -32,7 +33,7 @@ const MenuBoxItem = ({
       onMouseLeave={() => handleHover(false)}
       className="text-white hover:text-secondary font-poppins font-semibold text-xs flex items-center cursor-pointer relative w-[70px] justify-center"
       onClick={() => {
-        if (!icon) navigate(to ?? "/");
+        if (!icon) navigate(to ?? "");
       }}
     >
       <p>{text}</p>
@@ -89,9 +90,9 @@ const {setShowPopUp} = useContext(PopupContext)
       <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
       <div className="flex items-center h-full">
         <div className="flex gap-4 border-r border-[#eee] h-full">
-          <MenuBoxItem text="HOME" />
+          <MenuBoxItem text="HOME" to={routesPath.HOME} />
           <MenuBoxItem text="MENU" icon dropData={dropDownMenuData.menu} />
-          <MenuBoxItem text="ABOUT" />
+          <MenuBoxItem text="ABOUT" to={routesPath.ABOUT} />
           <MenuBoxItem text="CONTACT" />
           <MenuBoxItem text="NEWS" />
           <MenuBoxItem text="PAGES" icon dropData={dropDownMenuData.pages} />

@@ -56,7 +56,7 @@ export const DishDisplay = ({ dish, show }: { dish: MenuItem; show: boolean }) =
         alt={dish.image}
         className="rounded-full object-cover h-[60px] w-[60px]"
       />
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full gap-2">
         <div className="w-full flex gap-4">
           <p className="text-white font-bold text-[18px] font-poppins">
             {dish.dishes.title}

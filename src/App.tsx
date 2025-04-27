@@ -5,6 +5,7 @@ import routesPath from "./constants/routes.ts";
 import { PopUpProvider } from "./context/PopupProvider.tsx";
 import MenuPage from "./pages/MenuPage.tsx";
 import { ParallaxProvider } from "react-scroll-parallax";
+import AboutPage from "./pages/AboutPage.tsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               element={<DefaultMenuPage />}
             />
             <Route path={routesPath.MENU} element={<MenuPage />} />
+            <Route path={routesPath.ABOUT} element={<AboutPage />} />
           </Routes>
         </BrowserRouter>
       </PopUpProvider>
