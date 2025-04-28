@@ -10,25 +10,35 @@ import Testimony from "../sections/Testimony";
 import TopMenuSection from "../sections/TopMenuSection";
 import OurStorySection from "../sections/OurStorySection";
 
-const CounterDisplay = ({num, text} : {num:number, text:string}) => {
-    return (<div className="flex flex-col gap-4 items-center font-playfair">
-        <p className="text-[40px] font-semibold text-secondary">{num}</p>
-        <p className="text-xl font-semibold text-white">{text}</p>
-        <Icon icon="solar:menu-dots-bold" width="24" height="24" className="text-secondary" />
-    </div>)
-}
+const CounterDisplay = ({ num, text }: { num: number; text: string }) => {
+  return (
+    <div className="flex flex-col gap-4 items-center font-playfair">
+      <p className="text-[40px] font-semibold text-secondary">{num}</p>
+      <p className="text-xl font-semibold text-white">{text}</p>
+      <Icon
+        icon="solar:menu-dots-bold"
+        width="24"
+        height="24"
+        className="text-secondary"
+      />
+    </div>
+  );
+};
 
 interface CounterType {
-    num: number,
-    text: string
+  num: number;
+  text: string;
 }
 
 const AboutPage = () => {
   const [isHoverPlay, setIsHoverPlay] = useState(false);
 
   const counters: CounterType[] = [
-    {num: 254, text: "New Visiters Every Week"}, {num: 12176, text: "Happy Customers Every Year"}, {num: 172, text: "Won Awards"}, {num: 732, text: "Weekly Deliveries"},
-  ]
+    { num: 254, text: "New Visiters Every Week" },
+    { num: 12176, text: "Happy Customers Every Year" },
+    { num: 172, text: "Won Awards" },
+    { num: 732, text: "Weekly Deliveries" },
+  ];
 
   return (
     <div className="h-full w-full bg-primary">
@@ -42,11 +52,11 @@ const AboutPage = () => {
       <OurStorySection />
       <div className="w-full h-[40vh] relative overflow-hidden">
         <div className="absolute bg-[rgba(20,20,20,0.5)] w-full h-full z-10 flex justify-evenly items-center">
-            {counters.map((data, ind) => (
-                <CounterDisplay text={data.text} num={data.num} key={ind} />
-            ))}
+          {counters.map((data, ind) => (
+            <CounterDisplay text={data.text} num={data.num} key={ind} />
+          ))}
         </div>
-      <Parallax speed={-20}>
+        <Parallax speed={-20}>
           <img
             src={images.menuImg.MENUIMG2}
             alt={images.LANDING1}
@@ -57,7 +67,7 @@ const AboutPage = () => {
       <OurChefSection />
       <div className="w-full h-[50vh] relative overflow-hidden">
         <div className="absolute bg-[rgba(20,20,20,0.5)] w-full h-full z-10 flex flex-col justify-center items-center">
-          <p className="text-secondary font-playfair font-semibold">
+          <p className="text-secondary font-playfair font-semibold text-[20px]">
             Our promo video
           </p>
           <p className="text-white text-[32px] font-bold font-playfair w-[80%] text-center mb-3">
