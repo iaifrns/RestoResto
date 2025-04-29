@@ -83,18 +83,18 @@ const TopBar = () => {
   const [isCartHovered, setIsCartHovered] = useState(false);
   const [isShareIconHovered, setIsShareIconHovered] = useState(false);
 
-const {setShowPopUp} = useContext(PopupContext)
+  const { setShowPopUp } = useContext(PopupContext);
 
   return (
-    <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 max-w-[1200px] border-[1px] relative ">
+    <div className="flex items-center w-full h-[70px] bg-primary justify-between pl-4 border-gray-700 max-w-[1200px] border-[1px] relative shadow-2">
       <p className="text-2xl font-bold text-white font-mono">RESTORESTO</p>
       <div className="flex items-center h-full">
         <div className="flex gap-4 border-r border-[#eee] h-full">
           <MenuBoxItem text="HOME" to={routesPath.HOME} />
           <MenuBoxItem text="MENU" icon dropData={dropDownMenuData.menu} />
           <MenuBoxItem text="ABOUT" to={routesPath.ABOUT} />
-          <MenuBoxItem text="CONTACT" />
-          <MenuBoxItem text="NEWS" />
+          <MenuBoxItem text="CONTACT" to={routesPath.CONTACT} />
+          <MenuBoxItem text="NEWS" to={routesPath.NEWS} />
           <MenuBoxItem text="PAGES" icon dropData={dropDownMenuData.pages} />
         </div>
         <div
