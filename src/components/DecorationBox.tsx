@@ -8,6 +8,15 @@ const TopBox = ({ w = "100px", h = "100px" }: { w?: string; h?: string }) => {
   );
 };
 
+const TopRightBox = ({ w = "100px", h = "100px" }: { w?: string; h?: string }) => {
+  return (
+    <div
+      className={`border-t border-secondary border-dotted border-r`}
+      style={{ width: w, height: h }}
+    ></div>
+  );
+};
+
 const BottomBox = ({
   w = "100px",
   h = "100px",
@@ -51,5 +60,5 @@ const Dottes = () => {
 
 const DottedLines = () => (<div className="w-[200px] h-[1px] border-t border-dotted border-secondary"></div>)
 
-export { BottomBox, BottomRightBox, Dottes, TopBox, DottedLines };
+export { BottomBox, BottomRightBox, Dottes, TopBox, DottedLines, TopRightBox };
 

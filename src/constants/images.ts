@@ -10,6 +10,7 @@ import BG4 from "../assets/bg3.png";
 import IMG1 from "../assets/img 1.jpg";
 import IMG2 from "../assets/img 2.jpg";
 import IMG3 from "../assets/img3.png";
+import IMG4 from "../assets/img4.jpg";
 import WhyUsImg1 from "../assets/5.png";
 import WhyUsImg2 from "../assets/6.png";
 import WhyUsImg3 from "../assets/7.png";
@@ -40,6 +41,7 @@ const images = {
   IMG1,
   IMG2,
   IMG3,
+  IMG4,
   WhyUsImg1,
   WhyUsImg2,
   WhyUsImg3,

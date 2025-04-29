@@ -1,5 +1,7 @@
 import { MenuCategory } from "../enum/menu";
+import { CartCategoryType, CartImgItem } from "../types/cartType";
 import { ChefInfoType } from "../types/chefInfoType";
+import { DishInfoType } from "../types/disheInfoType";
 import { ItemStructureType } from "../types/inputType";
 import { Dishe, MenuItem, MenuType } from "../types/menuType";
 import { EventType } from "../types/occation";
@@ -9,15 +11,19 @@ import { images } from "./images";
 import routesPath from "./routes";
 
 const dropDownMenuData: Record<string, Array<Record<string, string>>> = {
-  menu: [{text: "MENU1", to: routesPath.DEFAULTMENU}, {text: "MENU2", to: routesPath.MENU}, {text: "MENU3", to: ''}],
+  menu: [
+    { text: "MENU1", to: routesPath.DEFAULTMENU },
+    { text: "MENU2", to: routesPath.MENU },
+    { text: "MENU3", to: "" },
+  ],
   pages: [
-    {text: "SHOP", to: ''},
-    {text: "PRODUCT SINGLE", to: ''},
-    {text: "CART", to: ''},
-    {text: "GALLERY", to: ''},
-    {text: "BLOG SINGLE", to: ''},
-    {text: "404", to: ''},
-    {text: "COMING SOON", to: ''}
+    { text: "SHOP", to: "" },
+    { text: "PRODUCT SINGLE", to: "" },
+    { text: "CART", to: "" },
+    { text: "GALLERY", to: "" },
+    { text: "BLOG SINGLE", to: "" },
+    { text: "404", to: "" },
+    { text: "COMING SOON", to: "" },
   ],
 };
 
@@ -331,8 +337,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Seasoned with an herb crust, served with au jus and handcarved to order.",
       title: "Soft shell crab",
-      price: "$34"
-    }
+      price: "$34",
+    },
   },
   {
     catergory: MenuCategory.MAINDISHES,
@@ -340,8 +346,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Usce tempus tempus maximus volutpat",
       title: "Victoria's Filet Mignon",
-      price: "$14"
-    }
+      price: "$14",
+    },
   },
   {
     catergory: MenuCategory.MAINDISHES,
@@ -349,8 +355,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Integer nec lacinia arcu, vel rhoncus leo aliquet.",
       title: "Fish pie",
-      price: "$27"
-    }
+      price: "$27",
+    },
   },
   {
     catergory: MenuCategory.MAINDISHES,
@@ -358,8 +364,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Pellentesque eros mi, faucibus tempor scelerisque nec, efficitur nec nunc.",
       title: "Prime Cuts of Beef",
-      price: "$21"
-    }
+      price: "$21",
+    },
   },
   {
     catergory: MenuCategory.MAINDISHES,
@@ -367,8 +373,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Our tender, juicy filet paired with a steamed lobster tail. Served with your choice of signature potato and one freshly made side.",
       title: "Miso chicken",
-      price: "$18"
-    }
+      price: "$18",
+    },
   },
   {
     catergory: MenuCategory.MAINDISHES,
@@ -376,8 +382,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Pellentesque eros mi, faucibus tempor scelerisque nec, efficitur nec nunc.",
       title: "Garden salad",
-      price: "$33"
-    }
+      price: "$33",
+    },
   },
   {
     catergory: MenuCategory.MAINDISHES,
@@ -385,8 +391,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Fusce a tellus tellus. Praesent neque arcu, efficitur sit amet",
       title: "Salmon Riverland",
-      price: "$15"
-    }
+      price: "$15",
+    },
   },
   {
     catergory: MenuCategory.MAINDISHES,
@@ -394,8 +400,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Fusce a tellus tellus. Praesent neque arcu, efficitur sit amet",
       title: "Slow-Roasted Prime Rib",
-      price: "$19"
-    }
+      price: "$19",
+    },
   },
   {
     catergory: MenuCategory.STARTER,
@@ -403,8 +409,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Granny help you treat yourself with a different meal everyday",
       title: "Fried Potatoes",
-      price: "$27"
-    }
+      price: "$27",
+    },
   },
   {
     catergory: MenuCategory.STARTER,
@@ -412,8 +418,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Granny help you treat yourself with a different meal everyday",
       title: "Steak Filet",
-      price: "$24"
-    }
+      price: "$24",
+    },
   },
   {
     catergory: MenuCategory.STARTER,
@@ -421,8 +427,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Etiam fermentum justo nec auctor pretium",
       title: "Meatball tagliatelle",
-      price: "$22"
-    }
+      price: "$22",
+    },
   },
   {
     catergory: MenuCategory.STARTER,
@@ -430,8 +436,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Etiam tempus felis eros, id lobortis turpis",
       title: "Doner Burger",
-      price: "$11"
-    }
+      price: "$11",
+    },
   },
   {
     catergory: MenuCategory.DESSERTS,
@@ -439,8 +445,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Cum sociis natoque penatibus et magnis",
       title: "Cayenne Shrimp",
-      price: "$26"
-    }
+      price: "$26",
+    },
   },
   {
     catergory: MenuCategory.DESSERTS,
@@ -448,8 +454,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Granny help you treat yourself with a different meal everyday",
       title: "Soft shell crab",
-      price: "$61"
-    }
+      price: "$61",
+    },
   },
   {
     catergory: MenuCategory.DESSERTS,
@@ -457,8 +463,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "usce tempus tempus maximus volutpat",
       title: "Creme Brulee",
-      price: "$34"
-    }
+      price: "$34",
+    },
   },
   {
     catergory: MenuCategory.DESSERTS,
@@ -466,8 +472,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Etiam tempus felis eros, id lobortis turpis",
       title: "Tarte Tatin",
-      price: "$21"
-    }
+      price: "$21",
+    },
   },
   {
     catergory: MenuCategory.DESSERTS,
@@ -475,8 +481,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "usce tempus tempus maximus volutpat",
       title: "Lemon Meringue",
-      price: "$13"
-    }
+      price: "$13",
+    },
   },
   {
     catergory: MenuCategory.SEAFOOD,
@@ -484,8 +490,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Granny help you treat yourself with a different meal everyday",
       title: "Lobster with melted mozarella",
-      price: "$16"
-    }
+      price: "$16",
+    },
   },
   {
     catergory: MenuCategory.SEAFOOD,
@@ -493,8 +499,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Granny help you treat yourself with a different meal everyday",
       title: "Filet De Saumon",
-      price: "$44"
-    }
+      price: "$44",
+    },
   },
   {
     catergory: MenuCategory.SEAFOOD,
@@ -502,8 +508,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Etiam tempus felis eros, id lobortis turpis",
       title: "Butterfly fried shrimps platter",
-      price: "$35"
-    }
+      price: "$35",
+    },
   },
   {
     catergory: MenuCategory.SEAFOOD,
@@ -511,8 +517,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Etiam tempus felis eros, id lobortis turpis",
       title: "Chapel Down",
-      price: "$43"
-    }
+      price: "$43",
+    },
   },
   {
     catergory: MenuCategory.DRINKS,
@@ -520,8 +526,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Granny help you treat yourself with a different meal everyday",
       title: "Kiwi Coctail",
-      price: "$16"
-    }
+      price: "$16",
+    },
   },
   {
     catergory: MenuCategory.DRINKS,
@@ -529,8 +535,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "usce tempus tempus maximus volutpat",
       title: "Red Mojitos",
-      price: "$19"
-    }
+      price: "$19",
+    },
   },
   {
     catergory: MenuCategory.DRINKS,
@@ -538,8 +544,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "usce tempus tempus maximus volutpat",
       title: "Italian Soup",
-      price: "$12"
-    }
+      price: "$12",
+    },
   },
   {
     catergory: MenuCategory.DRINKS,
@@ -547,8 +553,8 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "Etiam tempus felis eros, id lobortis turpis",
       title: "Summer Beer",
-      price: "$13"
-    }
+      price: "$13",
+    },
   },
   {
     catergory: MenuCategory.DRINKS,
@@ -556,12 +562,98 @@ const dishes: MenuItem[] = [
     dishes: {
       desc: "usce tempus tempus maximus volutpat",
       title: "Cabernet Sauvignon",
-      price: "$08"
-    }
+      price: "$08",
+    },
   },
-]
+];
+
+const dishesDetailInfo: DishInfoType[] = [
+  {
+    name: "Pasta Receipt",
+    date: "12 may 2024",
+    image: images.WhyUsImg2,
+    desc: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. Praesent eu massa vel diam laoreet elementum ac sed felis. Donec suscipit ultricies risus sed mollis. Donec volutpat porta risus posuere imperdiet. Sed viverra dolor sed dolor placerat ornare ut . Integer iaculis tellus nulla, quis imperdiet magna venenatis vitae.",
+    views: 567,
+    num_comment: 3,
+  },
+  {
+    name: "Burger Big Daddy Receipt",
+    date: "12 Jan 2025",
+    image: images.WhyUsImg1,
+    desc: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. Praesent eu massa vel diam laoreet elementum ac sed felis. Donec suscipit ultricies risus sed mollis. Donec volutpat porta risus posuere imperdiet. Sed viverra dolor sed dolor placerat ornare ut . Integer iaculis tellus nulla, quis imperdiet magna venenatis vitae.",
+    views: 227,
+    num_comment: 3,
+  },
+  {
+    name: "The Secret Ingredient",
+    date: "02 Feb 2025",
+    image: images.WhyUsImg3,
+    desc: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. Praesent eu massa vel diam laoreet elementum ac sed felis. Donec suscipit ultricies risus sed mollis. Donec volutpat porta risus posuere imperdiet. Sed viverra dolor sed dolor placerat ornare ut . Integer iaculis tellus nulla, quis imperdiet magna venenatis vitae.",
+    views: 567,
+    num_comment: 3,
+  },
+  {
+    name: "Jazz Band Bingo",
+    date: "03 Apr 2025",
+    image: images.IMG3,
+    desc: "Vestibulum orci felis, ullamcorper non condimentum non, ultrices ac nunc. Mauris non ligula suscipit, vulputate mi accumsan, dapibus felis. Nullam sed sapien dui. Nulla auctor sit amet sem non porta. Praesent eu massa vel diam laoreet elementum ac sed felis. Donec suscipit ultricies risus sed mollis. Donec volutpat porta risus posuere imperdiet. Sed viverra dolor sed dolor placerat ornare ut . Integer iaculis tellus nulla, quis imperdiet magna venenatis vitae.",
+    views: 687,
+    num_comment: 10,
+  },
+];
+
+const cartItemImgList: CartImgItem[] = [
+  {
+    image: images.LANDING2,
+    title: "Snowy Mountains Trip",
+    date: "3 Feb 2023",
+    num_comment: 0,
+  },
+  {
+    image: images.LANDING1,
+    title: "Snowy Mountains Trip",
+    date: "04 Avril 2023",
+    num_comment: 0,
+  },
+  {
+    image: images.LANDING4,
+    title: "Snowy Mountains Trip",
+    date: "15 Dev 2023",
+    num_comment: 0,
+  },
+];
+
+const tags: Array<string> = [
+  "lifeStyle",
+  "Travel",
+  "Trip",
+  "Outdoor",
+  "Camping",
+  "Photos",
+  "Adventure",
+];
+
+const dishCategoryList: CartCategoryType[] = [
+  { text: "Seafood", num: 14 },
+  { text: "Receipts", num: 22 },
+  { text: "Dishes", num: 10 },
+  { text: "Travel", num: 9 },
+  { text: "Photos", num: 5 },
+];
+
+const cartSocialMediaIconList: Array<string> = [
+  "line-md:facebook",
+  "ic:twotone-tiktok",
+  "bxl:instagram-alt",
+  "formkit:linkedin",
+  "simple-icons:indeed",
+];
 
 export {
+  cartSocialMediaIconList,
+  dishCategoryList,
+  cartItemImgList,
+  tags,
   dropDownMenuData,
   cartData,
   people,
@@ -571,5 +663,6 @@ export {
   chefInfo,
   eventData,
   testimonyData,
-  dishes
+  dishes,
+  dishesDetailInfo,
 };
