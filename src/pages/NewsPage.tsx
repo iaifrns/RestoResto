@@ -1,5 +1,6 @@
 import DisheDetail from "../components/DisheDetail";
 import Padination from "../components/Padination";
+import PopUpReservation from "../components/PopupReservation";
 import SearchBar from "../components/SearchBar";
 import { CartList, CartSocialMedaiList, CartTags, ListWithImgCart, SimpleCart } from "../components/SimpleCart";
 import { cartItemImgList, cartSocialMediaIconList, dishCategoryList, dishesDetailInfo, tags } from "../constants/data";
@@ -39,6 +40,8 @@ const NewsPage = () => {
         </div>
         <FooterSection />
       </ComponentContainer>
+      {/* popup menu resevation */}
+      <PopUpReservation />
     </div>
   );
 };

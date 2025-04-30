@@ -6,6 +6,7 @@ import FooterSection from "../sections/FooterSection";
 import HeaderSection from "../sections/HeaderSection";
 import TopMenuSection from "../sections/TopMenuSection";
 import { DishDisplay } from "./DefaultMenuPage";
+import PopUpReservation from "../components/PopupReservation";
 
 const MenuPage = () => {
   return (
@@ -60,6 +61,8 @@ const MenuPage = () => {
         ))}
       </div>
       <FooterSection />
+      {/* popup menu resevation */}
+      <PopUpReservation />
     </div>
   );
 };

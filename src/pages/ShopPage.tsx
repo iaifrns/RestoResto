@@ -10,6 +10,7 @@ import ComponentContainer from "../layout/SectionContainer";
 import FooterSection from "../sections/FooterSection";
 import HeaderSection from "../sections/HeaderSection";
 import TopMenuSection from "../sections/TopMenuSection";
+import PopUpReservation from "../components/PopupReservation";
 
 const dropDowmItemList = [
   "Popularity",
@@ -107,6 +108,8 @@ const ShopPage = () => {
         </div>
         <FooterSection />
       </ComponentContainer>
+      {/* popup menu resevation */}
+      <PopUpReservation />
     </div>
   );
 };

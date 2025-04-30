@@ -9,6 +9,7 @@ import OurChefSection from "../sections/OurChefSection";
 import Testimony from "../sections/Testimony";
 import TopMenuSection from "../sections/TopMenuSection";
 import OurStorySection from "../sections/OurStorySection";
+import PopUpReservation from "../components/PopupReservation";
 
 const CounterDisplay = ({ num, text }: { num: number; text: string }) => {
   return (
@@ -102,6 +103,8 @@ const AboutPage = () => {
       </div>
       <Testimony />
       <FooterSection />
+      {/* popup menu resevation */}
+      <PopUpReservation />
     </div>
   );
 };

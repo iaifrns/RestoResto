@@ -76,4 +76,100 @@ const DisheDetail = ({ dishInfo }: { dishInfo: DishInfoType }) => {
   );
 };
 
+export const DishDetailInfo = ({
+  name,
+  price,
+  image,
+  category,
+  desc,
+  num_v,
+  num_shop,
+}: {
+  name: string;
+  price: string;
+  image: string;
+  category: string[];
+  desc: string;
+  num_v: number;
+  num_shop: number;
+}) => {
+  return (
+    <div className="w-full flex flex-col gap-6">
+      <div className="w-full flex items-start justify-between">
+        <div className="flex flex-col gap-4 w-full">
+          <div className="flex justify-between items-start">
+            <div className="flex flex-col gap-3">
+              <p className="text-white hover:text-secondary text-[32px] font-bold font-playfair cursor-default">
+                {name}
+              </p>
+              <div className="flex gap-6 text-gray-300 font-poppins text-sm cursor-default">
+                <div className="flex gap-2">
+                  <p className="hover:text-secondary">Price:</p>
+                  <p className="text-secondary">{price}</p>
+                </div>
+                <div className="flex gap-2">
+                  <p className="hover:text-secondary">3 reviews</p>
+                  <div className="flex gap-2">
+                    <Icon icon="fluent-color:star-16" width="16" height="16" />
+                    <Icon icon="fluent-color:star-16" width="16" height="16" />
+                    <Icon icon="fluent-color:star-16" width="16" height="16" />
+                    <Icon icon="fluent-color:star-16" width="16" height="16" />
+                    <Icon icon="fluent-color:star-16" width="16" height="16" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <TopRightBox w={"70px"} h={"80px"} />
+          </div>
+
+          <img
+            src={image}
+            alt={image}
+            className="w-full h-[500px] object-cover "
+          />
+          <div className="flex gap-4 items-center">
+            <p className="font-poppins font-bold text-white">TAGS:</p>
+            <div className="flex gap-1 text-sm font-playfair text-white">
+              {category.map((text, ind) => (
+                <p key={ind} className="py-2 px-4 bg-bgcolor">
+                  {text}
+                </p>
+              ))}
+            </div>
+          </div>
+          <p className="text-gray-300 font-playfair text-[14px]">{desc}</p>
+          <div className="flex justify-between items-start">
+            <div className="flex gap-2 items-center">
+              <p className="w-[80px] p-4 bg-bgcolor text-center h-full text-white">
+                1
+              </p>
+              <CustomButton text="Read more" />
+            </div>
+            <div className="py-2 px-6 flex gap-4 border-secondary bg-bgcolor text-white font-playfair">
+              <div className="flex gap-2 items-center">
+                <Icon
+                  icon="solar:eye-linear"
+                  width="24"
+                  height="24"
+                  className="text-secondary"
+                />
+                <p>{num_v}</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <Icon
+                  icon="weui:shop-outlined"
+                  width="24"
+                  height="24"
+                  className="text-secondary"
+                />
+                <p>{num_shop}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default DisheDetail;

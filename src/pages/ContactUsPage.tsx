@@ -10,6 +10,7 @@ import FooterSection from "../sections/FooterSection";
 import TopMenuSection from "../sections/TopMenuSection";
 import { inputType } from "../types/inputType";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import PopUpReservation from "../components/PopupReservation";
 
 const ContactUsPage = () => {
   const [reservationFrom, setReservationFrom] = useState<
@@ -175,6 +176,8 @@ const ContactUsPage = () => {
         </div>
         <FooterSection />
       </ComponentContainer>
+      {/* popup menu resevation */}
+      <PopUpReservation />
     </div>
   );
 };

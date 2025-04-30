@@ -1,6 +1,7 @@
 import { MenuCategory } from "../enum/menu";
 import { CartCategoryType, CartImgItem } from "../types/cartType";
 import { ChefInfoType } from "../types/chefInfoType";
+import { CommentType } from "../types/comment";
 import { DishInfoType } from "../types/disheInfoType";
 import { ItemStructureType } from "../types/inputType";
 import { DishDetailType, Dishe, MenuItem, MenuType } from "../types/menuType";
@@ -18,7 +19,7 @@ const dropDownMenuData: Record<string, Array<Record<string, string>>> = {
   ],
   pages: [
     { text: "SHOP", to: routesPath.SHOP },
-    { text: "PRODUCT SINGLE", to: "" },
+    { text: "PRODUCT SINGLE", to: routesPath.SINPLEPRODUCT },
     { text: "CART", to: "" },
     { text: "GALLERY", to: "" },
     { text: "BLOG SINGLE", to: "" },
@@ -760,6 +761,21 @@ const shopItems: DishDetailType[] = [
   },
 ];
 
+const comments: CommentType[] = [
+  {
+    name: "Liza Svenik",
+    date: "Ferbuary 02, 2025 at 07:39 am",
+    image: images.MAN3,
+    desc: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.",
+  },
+  {
+    name: "Anty",
+    date: "January 02, 2025 at 07:39 am",
+    image: images.GIRL2,
+    desc: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo.",
+  },
+];
+
 export {
   cartSocialMediaIconList,
   dishCategoryList,
@@ -777,4 +793,5 @@ export {
   dishes,
   dishesDetailInfo,
   shopItems,
+  comments
 };

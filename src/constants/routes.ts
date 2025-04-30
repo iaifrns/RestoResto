@@ -5,7 +5,8 @@ const routesPath = {
     ABOUT: '/about_us',
     CONTACT: '/contact',
     NEWS: '/news_page',
-    SHOP: '/shop_page'
+    SHOP: '/shop_page',
+    SINPLEPRODUCT: '/single_product',
 }
 
 export default routesPath
