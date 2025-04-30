@@ -3,7 +3,7 @@ import { CartCategoryType, CartImgItem } from "../types/cartType";
 import { ChefInfoType } from "../types/chefInfoType";
 import { DishInfoType } from "../types/disheInfoType";
 import { ItemStructureType } from "../types/inputType";
-import { Dishe, MenuItem, MenuType } from "../types/menuType";
+import { DishDetailType, Dishe, MenuItem, MenuType } from "../types/menuType";
 import { EventType } from "../types/occation";
 import { TestimonyType } from "../types/testimonyType";
 import { WhyUsType } from "../types/whyUsType";
@@ -17,7 +17,7 @@ const dropDownMenuData: Record<string, Array<Record<string, string>>> = {
     { text: "MENU3", to: "" },
   ],
   pages: [
-    { text: "SHOP", to: "" },
+    { text: "SHOP", to: routesPath.SHOP },
     { text: "PRODUCT SINGLE", to: "" },
     { text: "CART", to: "" },
     { text: "GALLERY", to: "" },
@@ -635,10 +635,10 @@ const tags: Array<string> = [
 
 const dishCategoryList: CartCategoryType[] = [
   { text: "Seafood", num: 14 },
-  { text: "Receipts", num: 22 },
-  { text: "Dishes", num: 10 },
-  { text: "Travel", num: 9 },
-  { text: "Photos", num: 5 },
+  { text: "Drinks", num: 22 },
+  { text: "Desserts", num: 10 },
+  { text: "Starter", num: 9 },
+  { text: "Main Dishes", num: 5 },
 ];
 
 const cartSocialMediaIconList: Array<string> = [
@@ -647,6 +647,117 @@ const cartSocialMediaIconList: Array<string> = [
   "bxl:instagram-alt",
   "formkit:linkedin",
   "simple-icons:indeed",
+];
+
+const shopItems: DishDetailType[] = [
+  {
+    dishe: {
+      title: "Soft shell crab",
+      desc: "Seasoned with an herb crust, served with au jus and handcarved to order.",
+      price: "$29",
+    },
+    catergory: [dishCategoryList[0].text, dishCategoryList[4].text],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 256,
+    num_views: 567,
+    image: images.SHOP.ArticleImg1,
+  },
+  {
+    dishe: {
+      title: "Fish pie",
+      desc: "Our tender, juicy filet paired with a steamed tempor lobster tail.",
+      price: "$62",
+    },
+    catergory: [dishCategoryList[3].text, dishCategoryList[2].text],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 137,
+    num_views: 394,
+    image: images.SHOP.ArticleImg2,
+  },
+  {
+    dishe: {
+      title: "Victoria's Filet Mignon",
+      desc: "Pellentesque eros mi, faucibus tempor scelerisque nec, efficitur nec nunc.",
+      price: "$18",
+    },
+    catergory: [dishCategoryList[0].text],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 345,
+    num_views: 893,
+    image: images.SHOP.ArticleImg3,
+  },
+  {
+    dishe: {
+      title: "Prime Cuts of Beef",
+      desc: "Granny help you treat yourself with a empor scelerisque different meal everyday.",
+      price: "$31",
+    },
+    catergory: [dishCategoryList[2].text, dishCategoryList[3].text],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 43,
+    num_views: 139,
+    image: images.SHOP.ArticleImg4,
+  },
+  {
+    dishe: {
+      title: "Miso chicken",
+      desc: "Seasoned with an herb crust, served with au empor scelerisque jus and handcarved to order.",
+      price: "$67",
+    },
+    catergory: [
+      dishCategoryList[3].text,
+      dishCategoryList[0].text,
+      dishCategoryList[2].text,
+    ],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 134,
+    num_views: 452,
+    image: images.SHOP.ArticleImg5,
+  },
+  {
+    dishe: {
+      title: "Salmon Riverland",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+      price: "$29",
+    },
+    catergory: [dishCategoryList[2].text, dishCategoryList[1].text],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 145,
+    num_views: 675,
+    image: images.SHOP.ArticleImg6,
+  },
+  {
+    dishe: {
+      title: "Slow-Roasted Prime Rib",
+      desc: "Seasoned with an herb crust, served with au jus and handcarved to order, crust, served .",
+      price: "$44",
+    },
+    catergory: [dishCategoryList[4].text],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 233,
+    num_views: 457,
+    image: images.SHOP.ArticleImg7,
+  },
+  {
+    dishe: {
+      title: "Meatball tagliatelle",
+      desc: "Granny help you treat yourself with a empor scelerisque different meal everyday.",
+      price: "$39",
+    },
+    catergory: [dishCategoryList[0].text, dishCategoryList[1].text],
+    longDesc:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare sem sed quam tempus aliquet vitae eget dolor. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Proin eu ultrices libero. Curabitur vulputate vestibulum elementum. Suspendisse id neque a nibh mollis blandit. Quisque varius eros ac purus dignissim. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+    num_shop: 133,
+    num_views: 456,
+    image: images.WhyUsImg3,
+  },
 ];
 
 export {
@@ -665,4 +776,5 @@ export {
   testimonyData,
   dishes,
   dishesDetailInfo,
+  shopItems,
 };

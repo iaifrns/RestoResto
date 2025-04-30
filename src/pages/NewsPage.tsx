@@ -30,7 +30,7 @@ const NewsPage = () => {
           </div>
           <div className="w-[35%] flex flex-col gap-8 h-fit sticky top-16">
             <SearchBar />
-            <SimpleCart />
+            <SimpleCart title="About Us" />
             <ListWithImgCart title="Recent Posts" list={cartItemImgList} />
             <CartTags title="Resent tags" textList={tags} />
             <CartList title="Categories" listItem={dishCategoryList} />

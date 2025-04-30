@@ -27,6 +27,13 @@ import MENUIMG2 from "../assets/menu/menu2.png";
 import MENUIMG3 from "../assets/menu/menu3.png";
 import MENUIMG4 from "../assets/menu/menu4.png";
 import MENUIMG5 from "../assets/menu/menu5.png";
+import ArticleImg1 from "../assets/shop/1.jpg";
+import ArticleImg2 from "../assets/shop/2.jpg";
+import ArticleImg3 from "../assets/shop/3.jpg";
+import ArticleImg4 from "../assets/shop/4.jpg";
+import ArticleImg5 from "../assets/shop/5.jpg";
+import ArticleImg6 from "../assets/shop/8.jpg";
+import ArticleImg7 from "../assets/shop/10.jpg";
 
 const images = {
   LANDING1,
@@ -60,6 +67,15 @@ const images = {
   MAN1,
   MAN2,
   MAN3,
+  SHOP:{
+    ArticleImg1,
+    ArticleImg2,
+    ArticleImg3,
+    ArticleImg4,
+    ArticleImg5,
+    ArticleImg6,
+    ArticleImg7
+  }
 };
 
 export { images };

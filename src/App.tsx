@@ -8,6 +8,7 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import AboutPage from "./pages/AboutPage.tsx";
 import ContactUsPage from "./pages/ContactUsPage.tsx";
 import NewsPage from "./pages/NewsPage.tsx";
+import ShopPage from "./pages/ShopPage.tsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path={routesPath.ABOUT} element={<AboutPage />} />
             <Route path={routesPath.CONTACT} element={<ContactUsPage />} />
             <Route path={routesPath.NEWS} element={<NewsPage />} />
+            <Route path={routesPath.SHOP} element={<ShopPage />} />
           </Routes>
         </BrowserRouter>
       </PopUpProvider>

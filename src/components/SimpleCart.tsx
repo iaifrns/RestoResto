@@ -1,13 +1,20 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { images } from "../constants/images";
 import { CartCategoryType, CartImgItem } from "../types/cartType";
+import { useEffect, useRef, useState } from "react";
 
-const SimpleCart = () => {
+const CartTitle = ({ title }: { title: string }) => {
+  return (
+    <p className="p-4 w-full text-center font-semibold text-white font-playfair text-[18px] border border-gray-700 bg-bgcolor">
+      {title}
+    </p>
+  );
+};
+
+const SimpleCart = ({ title }: { title: string }) => {
   return (
     <div className="w-full flex flex-col gap-4">
-      <p className="p-4 w-full text-center font-semibold text-white font-playfair text-2xl border border-gray-700 bg-bgcolor">
-        About Us
-      </p>
+      <CartTitle title={title} />
       <img
         src={images.IMG4}
         alt={images.IMG4}
@@ -35,9 +42,7 @@ const ListWithImgCart = ({
 }) => {
   return (
     <div className="flex flex-col gap-4">
-      <p className="p-4 w-full text-center font-semibold text-white font-playfair text-2xl border border-gray-700 bg-bgcolor">
-        {title}
-      </p>
+      <CartTitle title={title} />
       {list.map((data, ind) => (
         <div
           key={"cart image item-" + ind}
@@ -72,9 +77,7 @@ const CartTags = ({
 }) => {
   return (
     <div className="flex flex-col gap-4">
-      <p className="p-4 w-full text-center font-semibold text-white font-playfair text-2xl border border-gray-700 bg-bgcolor">
-        {title}
-      </p>
+      <CartTitle title={title} />
       <div className="flex flex-wrap gap-2">
         {textList.map((text, ind) => (
           <p
@@ -98,14 +101,14 @@ const CartList = ({
 }) => {
   return (
     <div className="flex flex-col gap-4">
-      <p className="p-4 w-full text-center font-semibold text-white font-playfair text-2xl border border-gray-700 bg-bgcolor">
-        {title}
-      </p>
+      <CartTitle title={title} />
       <div className="flex flex-col gap-3">
         {listItem.map((data, ind) => (
-          <div className="w-full flex gap-2 items-end" key={"category-" + ind}>
-            <p className="text-white font-poppins font-semibold">{data.text}</p>
-            <div className="w-full border-b border-dotted border-secondary h-[1px]"></div>
+          <div className="w-full flex gap-4 items-end" key={"category-" + ind}>
+            <p className="text-white font-poppins font-semibold ">
+              {data.text}
+            </p>
+            <div className="flex-1 border-b border-dotted border-secondary h-[1px]"></div>
             <p className="p-1 bg-secondary text-white rounded-full w-8 text-center text-sm">
               {data.num}
             </p>
@@ -125,9 +128,7 @@ const CartSocialMedaiList = ({
 }) => {
   return (
     <div className="flex flex-col gap-4">
-      <p className="p-4 w-full text-center font-semibold text-white font-playfair text-2xl border border-gray-700 bg-bgcolor">
-        {title}
-      </p>
+      <CartTitle title={title} />
       <div className="flex gap-2">
         {icons.map((icon, ind) => (
           <div className="p-4 bg-bgcolor">
@@ -145,4 +146,76 @@ const CartSocialMedaiList = ({
   );
 };
 
-export { SimpleCart, ListWithImgCart, CartTags, CartList, CartSocialMedaiList };
+const CartPriceRange = ({ title }: { title: string }) => {
+  const divRef = useRef<HTMLDivElement>(null);
+
+  const [dragging, setDragging] = useState(false);
+  const [position, setPosition] = useState(0);
+
+  const handleMouseDown = () => setDragging(true);
+  const handleMouseUp = () => setDragging(false);
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (!divRef.current) return;
+
+    const rect = divRef.current.getBoundingClientRect();
+    let newX = e.clientX - rect.left;
+    newX = Math.max(0, Math.min(newX, rect.width));
+    setPosition(newX);
+  };
+
+  useEffect(() => {
+    if (dragging) {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    } else {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    }
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [dragging]);
+
+  return (
+    <div className="flex flex-col gap-4">
+      <CartTitle title={title} />
+      <div className="flex gap-2 w-full items-center">
+        <div className="flex flex-col gap-1 w-full">
+          <div className="flex justify-between w-full text-gray-400 text-xs">
+            <p>$0</p>
+            <p>$1000</p>
+          </div>
+          <div className="w-full relative h-12 overflow-hidden" ref={divRef}>
+            <div className="w-full top-8 h-1 rounded-lg bg-gray-500 absolute z-0"></div>
+            <div
+              className="flex flex-col items-center w-fit absolute z-10"
+              onMouseDown={handleMouseDown}
+              style={{ left: `${position}px` }}
+            >
+              <p className="text-xs text-white p-1 bg-bgcolor w-[30px] text-center">
+                {Math.round(
+                  (position / (divRef.current?.clientWidth || 1)) * 1000
+                )}
+              </p>
+              <div className="w-5 h-5 rounded-full border-4 border-secondary"></div>
+            </div>
+          </div>
+        </div>
+        <button className="bg-secondary p-2 h-fit text-sm text-white hover:text-black font-semibold">
+          update
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export {
+  SimpleCart,
+  ListWithImgCart,
+  CartTags,
+  CartList,
+  CartSocialMedaiList,
+  CartPriceRange,
+};

@@ -15,3 +15,12 @@ export interface MenuItem {
     dishes: Dishe,
     image: string
 }
+
+export interface DishDetailType {
+    dishe: Dishe,
+    catergory: string[],
+    longDesc: string,
+    num_views: number,
+    num_shop: number,
+    image: string
+}
