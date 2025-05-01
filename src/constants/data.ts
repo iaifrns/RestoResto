@@ -20,8 +20,8 @@ const dropDownMenuData: Record<string, Array<Record<string, string>>> = {
   pages: [
     { text: "SHOP", to: routesPath.SHOP },
     { text: "PRODUCT SINGLE", to: routesPath.SINPLEPRODUCT },
-    { text: "CART", to: "" },
-    { text: "GALLERY", to: "" },
+    { text: "CART", to: routesPath.CARTPAGE },
+    { text: "GALLERY", to: routesPath.GALLERYPAGE },
     { text: "BLOG SINGLE", to: "" },
     { text: "404", to: "" },
     { text: "COMING SOON", to: "" },
@@ -776,6 +776,33 @@ const comments: CommentType[] = [
   },
 ];
 
+const categories = [ ...Object.values(MenuCategory)];
+
+const dishImages: { image: string; category: string; w: string; h: string }[] =
+  [
+    { image: images.SHOP.ArticleImg1, category: categories[0], w: "800px", h: "300px" },
+  { image: images.SHOP.ArticleImg2, category: categories[1], w: "400px", h: "300px" },
+  { image: images.SHOP.ArticleImg3, category: categories[2], w: "400px", h: "300px" },
+  { image: images.SHOP.ArticleImg4, category: categories[3], w: "400px", h: "300px" },
+  { image: images.SHOP.ArticleImg5, category: categories[4], w: "400px", h: "600px" },
+  { image: images.SHOP.ArticleImg6, category: categories[0], w: "400px", h: "300px" },
+  { image: images.SHOP.ArticleImg7, category: categories[1], w: "800px", h: "300px" },
+  { image: images.WhyUsImg1, category: categories[2], w: "400px", h: "300px" },
+  { image: images.WhyUsImg2, category: categories[3], w: "400px", h: "600px" },
+  { image: images.WhyUsImg3, category: categories[4], w: "400px", h: "300px" },
+  { image: images.LANDING1, category: categories[0], w: "400px", h: "300px" },
+  { image: images.LANDING2, category: categories[1], w: "400px", h: "300px" },
+  { image: images.LANDING3, category: categories[2], w: "800px", h: "300px" },
+  { image: images.LANDING4, category: categories[3], w: "400px", h: "300px" },
+  { image: images.menuImg.MENUIMG1, category: categories[4], w: "400px", h: "300px" },
+  { image: images.menuImg.MENUIMG2, category: categories[0], w: "400px", h: "300px" },
+  { image: images.menuImg.MENUIMG3, category: categories[1], w: "400px", h: "600px" },
+  { image: images.menuImg.MENUIMG4, category: categories[2], w: "400px", h: "300px" },
+  { image: images.menuImg.MENUIMG5, category: categories[3], w: "800px", h: "300px" },
+  { image: images.IMG1, category: categories[4], w: "400px", h: "300px" },
+  { image: images.IMG2, category: categories[0], w: "400px", h: "600px" },
+  ];
+
 export {
   cartSocialMediaIconList,
   dishCategoryList,
@@ -793,5 +820,6 @@ export {
   dishes,
   dishesDetailInfo,
   shopItems,
-  comments
+  comments,
+  dishImages,
 };

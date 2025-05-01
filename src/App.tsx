@@ -10,6 +10,8 @@ import ContactUsPage from "./pages/ContactUsPage.tsx";
 import NewsPage from "./pages/NewsPage.tsx";
 import ShopPage from "./pages/ShopPage.tsx";
 import SingleProductPage from "./pages/SingleProductPage.tsx";
+import CartShopPage from "./pages/CartShopPage.tsx";
+import GalleryPage from "./pages/GalleryPage.tsx";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
             <Route path={routesPath.NEWS} element={<NewsPage />} />
             <Route path={routesPath.SHOP} element={<ShopPage />} />
             <Route path={routesPath.SINPLEPRODUCT} element={<SingleProductPage />} />
+            <Route path={routesPath.CARTPAGE} element={<CartShopPage />} />
+            <Route path={routesPath.GALLERYPAGE} element={<GalleryPage />} />
           </Routes>
         </BrowserRouter>
       </PopUpProvider>

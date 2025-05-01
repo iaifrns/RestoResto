@@ -7,6 +7,8 @@ const routesPath = {
     NEWS: '/news_page',
     SHOP: '/shop_page',
     SINPLEPRODUCT: '/single_product',
+    CARTPAGE: '/cart_page',
+    GALLERYPAGE: '/gallery_page',
 }
 
 export default routesPath
