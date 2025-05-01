@@ -1,16 +1,30 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Padination from "../components/Padination";
 import SearchBar from "../components/SearchBar";
 import ShopItemDisplay from "../components/ShopItemDisplay";
-import { CartList, CartPriceRange, CartTags, ListWithImgCart } from "../components/SimpleCart";
-import { cartItemImgList, dishCategoryList, shopItems, tags } from "../constants/data";
+import {
+  CartList,
+  CartPriceRange,
+  CartTags,
+  ListWithImgCart,
+} from "../components/SimpleCart";
+import {
+  cartItemImgList,
+  dishCategoryList,
+  shopItems,
+  tags,
+} from "../constants/data";
 import { images } from "../constants/images";
 import ComponentContainer from "../layout/SectionContainer";
 import FooterSection from "../sections/FooterSection";
 import HeaderSection from "../sections/HeaderSection";
 import TopMenuSection from "../sections/TopMenuSection";
 import PopUpReservation from "../components/PopupReservation";
+import { useNavigate } from "react-router-dom";
+import { DishDetailType } from "../types/menuType";
+import { PopupContext } from "../context/PopupProvider";
+import routesPath from "../constants/routes";
 
 const dropDowmItemList = [
   "Popularity",
@@ -26,6 +40,14 @@ const ShopPage = () => {
   const handleDropDownActiveItem = (i: number) => {
     setDropDownActiveItem(i);
     setShowDropDown(false);
+  };
+
+  const navigate = useNavigate();
+  const { setShopItem } = useContext(PopupContext);
+
+  const handleNavigateToDetailProduct = (data: DishDetailType) => {
+    setShopItem(data);
+    navigate(routesPath.SINPLEPRODUCT);
   };
 
   return (
@@ -92,6 +114,7 @@ const ShopPage = () => {
                     desc={item.dishe.desc}
                     price={item.dishe.price}
                     key={"shop-item-" + ind}
+                    onclick={() => handleNavigateToDetailProduct(item)}
                   />
                 ))}
               </div>

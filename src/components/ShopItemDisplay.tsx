@@ -5,11 +5,13 @@ const ShopItemDisplay = ({
   name,
   desc,
   price,
+  onclick,
 }: {
   image: string;
   name: string;
   desc: string;
   price: string;
+  onclick: () => void;
 }) => {
   const [isScale, setIsScale] = useState(false);
   return (
@@ -28,7 +30,10 @@ const ShopItemDisplay = ({
         />
       </div>
       <div className="bg-[rgb(55,55,55)] border border-gray-700 p-4 flex flex-col gap-2">
-        <p  className="text-white hover:text-secondary font-semibold font-playfair text-xl cursor-pointer">
+        <p
+          className="text-white hover:text-secondary font-semibold font-playfair text-xl cursor-pointer"
+          onClick={onclick}
+        >
           {name}
         </p>
         <p className="text-[12px] font-poppins text-gray-300">{desc}</p>

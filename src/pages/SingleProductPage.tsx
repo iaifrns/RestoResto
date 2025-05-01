@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CustomButton } from "../components/CustomButton";
 import { CustomTextArea, NormalInputBox } from "../components/CustomInput";
 import { DishDetailInfo } from "../components/DisheDetail";
@@ -26,6 +26,7 @@ import HeaderSection from "../sections/HeaderSection";
 import TopMenuSection from "../sections/TopMenuSection";
 import { inputType } from "../types/inputType";
 import { DottedLines } from "../components/DecorationBox";
+import { PopupContext } from "../context/PopupProvider";
 
 const shortList: Array<Record<string, string>> = [
   {
@@ -46,8 +47,21 @@ const shortList: Array<Record<string, string>> = [
 ];
 
 const SingleProductPage = () => {
-  const shopItem = shopItems[0];
+  const {shopItem} = useContext(PopupContext)
   const arr = new Array(5).fill("");
+
+  const [whichStarHovered, setWhichStarHovered] = useState(-1);
+  const [starNum, setStarNum] = useState(-1);
+
+  const whichStarToShow = (ind: number): string => {
+    let icon = "ri:star-line";
+    if (whichStarHovered == -1) {
+      icon = starNum < ind ? "ri:star-line" : "ri:star-fill";
+    } else {
+      icon = whichStarHovered < ind ? "ri:star-line" : "ri:star-fill";
+    }
+    return icon;
+  };
 
   const [reservationFrom, setReservationFrom] = useState<
     Record<string, inputType>
@@ -116,6 +130,19 @@ const SingleProductPage = () => {
             </div>
             <div className="flex flex-col gap-8 w-full h-full mt-2 border-t border-gray-600 pt-6">
               <p className="font-playfair text-xl text-white">Add Review</p>
+              <div className="flex gap-2">
+                {arr.map((_, ind) => (
+                  <Icon
+                    icon={whichStarToShow(ind)}
+                    width="24"
+                    height="24"
+                    className="text-secondary"
+                    onMouseEnter={() => setWhichStarHovered(ind)}
+                    onMouseLeave={() => setWhichStarHovered(-1)}
+                    onClick={() => setStarNum(ind)}
+                  />
+                ))}
+              </div>
               <div className="flex justify-between gap-8">
                 <NormalInputBox
                   value={reservationFrom.name.value}
@@ -165,7 +192,10 @@ const SingleProductPage = () => {
               </p>
               <div className="flex gap-8">
                 {shortList.map((item, ind) => (
-                  <div className="flex flex-col gap-4 flex-1 cursor-default" key={"sort item-"+ind}>
+                  <div
+                    className="flex flex-col gap-4 flex-1 cursor-default"
+                    key={"sort item-" + ind}
+                  >
                     <img src={item.image} alt={item.image} />
                     <div>
                       <p className="text-white hover:text-secondary font-poppins font-semibold">
